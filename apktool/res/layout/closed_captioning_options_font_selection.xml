@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioGroup android:orientation="vertical" android:padding="16.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RadioButton android:id="@id/closed_captioning_options_font_selection_normal" android:padding="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@drawable/closed_captioning_options_radiobutton" android:text="Normal" />
+    <RadioButton android:id="@id/closed_captioning_options_font_selection_monospace" android:padding="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@drawable/closed_captioning_options_radiobutton" android:text="Monospace" />
+    <RadioButton android:id="@id/closed_captioning_options_font_selection_serif" android:padding="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@drawable/closed_captioning_options_radiobutton" android:text="Serif" />
+    <RadioButton android:id="@id/closed_captioning_options_font_selection_sans_serif" android:padding="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@drawable/closed_captioning_options_radiobutton" android:text="Sans Serif" />
+</RadioGroup>

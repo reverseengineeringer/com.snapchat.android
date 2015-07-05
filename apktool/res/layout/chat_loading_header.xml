@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="60.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/loading_layout" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="60.0dip">
+        <ProgressBar android:id="@id/spinner" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_marginLeft="16.0dip" />
+        <TextView android:textSize="15.0sp" android:textColor="#ff666666" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:text="@string/chat_header_loading" />
+    </LinearLayout>
+    <TextView android:textSize="15.0sp" android:textColor="#ff666666" android:gravity="center" android:id="@id/failed_text" android:background="#fff5f5f5" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="60.0dip" android:text="@string/chat_header_failed" />
+</RelativeLayout>

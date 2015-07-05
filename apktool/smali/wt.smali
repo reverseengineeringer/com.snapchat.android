@@ -1,0 +1,66 @@
+.class public final Lwt;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# static fields
+.field private static final b:Lwt;
+
+
+# instance fields
+.field public final a:Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    .prologue
+    .line 8
+    new-instance v0, Lwt;
+
+    invoke-direct {v0}, Lwt;-><init>()V
+
+    sput-object v0, Lwt;->b:Lwt;
+
+    return-void
+.end method
+
+.method private constructor <init>()V
+    .locals 1
+
+    .prologue
+    .line 12
+    invoke-static {}, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;->a()Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Lwt;-><init>(Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;)V
+
+    .line 13
+    return-void
+.end method
+
+.method private constructor <init>(Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;)V
+    .locals 0
+
+    .prologue
+    .line 16
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 17
+    iput-object p1, p0, Lwt;->a:Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;
+
+    .line 18
+    return-void
+.end method
+
+.method public static a()Lwt;
+    .locals 1
+
+    .prologue
+    .line 21
+    sget-object v0, Lwt;->b:Lwt;
+
+    return-object v0
+.end method

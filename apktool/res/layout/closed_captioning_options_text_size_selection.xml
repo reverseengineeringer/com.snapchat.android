@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioGroup android:orientation="vertical" android:id="@id/closed_captioning_options_text_size_selector" android:padding="16.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RadioButton android:id="@id/closed_captioning_options_text_size_50_percent" android:padding="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@drawable/closed_captioning_options_radiobutton" android:text="50%" />
+    <RadioButton android:id="@id/closed_captioning_options_text_size_75_percent" android:padding="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@drawable/closed_captioning_options_radiobutton" android:text="75%" />
+    <RadioButton android:id="@id/closed_captioning_options_text_size_100_percent" android:padding="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@drawable/closed_captioning_options_radiobutton" android:text="100%" />
+    <RadioButton android:id="@id/closed_captioning_options_text_size_150_percent" android:padding="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@drawable/closed_captioning_options_radiobutton" android:text="150%" />
+    <RadioButton android:id="@id/closed_captioning_options_text_size_200_percent" android:padding="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@drawable/closed_captioning_options_radiobutton" android:text="200%" />
+</RadioGroup>

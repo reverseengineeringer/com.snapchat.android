@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge android:clickable="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/snap_container" android:background="@android:color/black" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <com.snapchat.android.ui.SnapTimerView android:id="@id/snap_timer_view" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginRight="10.0dip" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+    <com.snapchat.android.ui.VerticalSwipeLayout android:id="@id/my_story_swipe_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <com.snapchat.android.discover.ui.FadeFullScreenAnimationView android:id="@id/close_animation" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</merge>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="numberPickerStyle" format="reference" />
+    <attr name="snapchatTimePickerStyle" format="reference" />
+    <attr name="rfs_fast_scroller_layout" format="reference" />
+    <attr name="rfs_barColor" format="reference|color" />
+    <attr name="rfs_barBackground" format="reference" />
+    <attr name="rfs_handleColor" format="reference|color" />
+    <attr name="rfs_handleBackground" format="reference" />
+    <attr name="rfs_section_indicator_layout" format="reference" />
+    <attr name="adSize" format="string" />
+    <attr name="adSizes" format="string" />
+    <attr name="adUnitId" format="string" />
+    <attr name="fromDegrees" format="float" />
+    <attr name="toDegrees" format="float" />
+    <attr name="childSize" format="dimension" />
+    <attr name="circleColor" format="color" />
+    <attr name="gravity">
+        <enum name="bottom" value="2" />
+        <enum name="center" value="0" />
+        <enum name="top" value="1" />
+    </attr>
+    <attr name="header_button_color" format="integer">
+        <enum name="deep_purple" value="1" />
+        <enum name="pale_green" value="0" />
+    </attr>
+    <attr name="header_button_icon" format="integer">
+        <enum name="add_friend_button" value="3" />
+        <enum name="back_button" value="2" />
+        <enum name="camera_button" value="0" />
+        <enum name="confirm_button" value="6" />
+        <enum name="overflow_button" value="1" />
+        <enum name="send_button" value="5" />
+        <enum name="skip_button" value="4" />
+    </attr>
+    <attr name="header_button_side" format="integer">
+        <enum name="left" value="0" />
+        <enum name="right" value="1" />
+    </attr>
+    <attr name="sibling" format="integer" />
+    <attr name="text" format="string" />
+    <attr name="imageAspectRatioAdjust">
+        <enum name="adjust_height" value="2" />
+        <enum name="adjust_width" value="1" />
+        <enum name="none" value="0" />
+    </attr>
+    <attr name="imageAspectRatio" format="float" />
+    <attr name="circleCrop" format="boolean" />
+    <attr name="mapType">
+        <enum name="none" value="0" />
+        <enum name="hybrid" value="4" />
+        <enum name="normal" value="1" />
+        <enum name="satellite" value="2" />
+        <enum name="terrain" value="3" />
+    </attr>
+    <attr name="cameraBearing" format="float" />
+    <attr name="cameraTargetLat" format="float" />
+    <attr name="cameraTargetLng" format="float" />
+    <attr name="cameraTilt" format="float" />
+    <attr name="cameraZoom" format="float" />
+    <attr name="liteMode" format="boolean" />
+    <attr name="uiCompass" format="boolean" />
+    <attr name="uiRotateGestures" format="boolean" />
+    <attr name="uiScrollGestures" format="boolean" />
+    <attr name="uiTiltGestures" format="boolean" />
+    <attr name="uiZoomControls" format="boolean" />
+    <attr name="uiZoomGestures" format="boolean" />
+    <attr name="useViewLifecycle" format="boolean" />
+    <attr name="zOrderOnTop" format="boolean" />
+    <attr name="uiMapToolbar" format="boolean" />
+    <attr name="solidColor" format="reference|color" />
+    <attr name="selectionDivider" format="reference" />
+    <attr name="selectionDividerHeight" format="dimension" />
+    <attr name="selectionDividersDistance" format="dimension" />
+    <attr name="internalMinHeight" format="dimension" />
+    <attr name="internalMaxHeight" format="dimension" />
+    <attr name="internalMinWidth" format="dimension" />
+    <attr name="internalMaxWidth" format="dimension" />
+    <attr name="internalLayout" format="reference" />
+    <attr name="virtualButtonPressedDrawable" format="reference" />
+    <attr name="particle" format="reference" />
+    <attr name="maxActive" format="integer" />
+    <attr name="strokeWidthMax" format="dimension" />
+    <attr name="strokeWidthMin" format="dimension" />
+    <attr name="interpolator" format="reference" />
+    <attr name="penType">
+        <enum name="airbrush" value="2" />
+        <enum name="feltTip" value="1" />
+        <enum name="fountainpen" value="3" />
+        <enum name="whiteboard" value="0" />
+    </attr>
+    <attr name="ptr_rotate_ani_time" format="integer" />
+    <attr name="ptr_header" format="reference" />
+    <attr name="ptr_content" format="reference" />
+    <attr name="ptr_resistance" format="float" />
+    <attr name="ptr_ratio_of_header_height_to_refresh" format="float" />
+    <attr name="ptr_duration_to_close" format="integer" />
+    <attr name="ptr_duration_to_close_header" format="integer" />
+    <attr name="ptr_pull_to_fresh" format="boolean" />
+    <attr name="ptr_keep_header_when_refresh" format="boolean" />
+    <attr name="leftHolderWidth" format="dimension" />
+    <attr name="rfs_textColor" format="reference|color" />
+    <attr name="rfs_backgroundColor" format="reference|color" />
+    <attr name="SCsolidColor" format="reference|color" />
+    <attr name="SCselectionDivider" format="reference" />
+    <attr name="SCselectionDividerHeight" format="dimension" />
+    <attr name="SCselectionDividersDistance" format="dimension" />
+    <attr name="SCinternalMinHeight" format="dimension" />
+    <attr name="SCinternalMaxHeight" format="dimension" />
+    <attr name="SCinternalMinWidth" format="dimension" />
+    <attr name="SCinternalMaxWidth" format="dimension" />
+    <attr name="SCinternalLayout" format="reference" />
+    <attr name="color" format="color" />
+    <attr name="defaultPage" format="integer" />
+</resources>

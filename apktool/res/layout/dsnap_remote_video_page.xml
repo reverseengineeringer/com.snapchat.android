@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="center" android:id="@id/dsnap_remote_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_centerInParent="true" android:keepScreenOn="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/dsnap_remote_texturevideoview_holder" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <ProgressBar android:gravity="center" android:id="@id/dsnap_remote_progress_bar" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" style="@android:style/Widget.Holo.ProgressBar.Large" />
+    <FrameLayout android:id="@id/dsnap_remote_controller_anchor" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</RelativeLayout>

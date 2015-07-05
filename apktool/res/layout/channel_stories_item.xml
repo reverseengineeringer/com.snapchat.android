@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_gravity="center" android:id="@id/channel_view_holder" android:layout_width="@dimen/horizontal_section_cell_size" android:layout_height="@dimen/horizontal_section_cell_size" android:layout_margin="@dimen/discover_channel_margin"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.snapchat.android.discover.ui.ChannelView android:layout_gravity="center" android:id="@id/channel_view" android:layout_width="@dimen/horizontal_section_thumbnail_height" android:layout_height="@dimen/horizontal_section_thumbnail_height"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <ImageView android:layout_gravity="center" android:id="@id/channel_view_brand_icon" android:background="@null" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <ProgressBar android:layout_gravity="center" android:id="@id/channel_view_progress_bar" android:visibility="invisible" android:layout_width="@dimen/horizontal_section_progress_bar_size" android:layout_height="@dimen/horizontal_section_progress_bar_size" android:indeterminate="true" />
+        <ImageView android:layout_gravity="center" android:id="@id/channel_view_background" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </com.snapchat.android.discover.ui.ChannelView>
+</FrameLayout>

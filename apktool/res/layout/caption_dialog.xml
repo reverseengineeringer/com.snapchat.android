@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:background="@drawable/popover_background" android:paddingLeft="25.0dip" android:paddingTop="15.0dip" android:paddingRight="25.0dip" android:paddingBottom="15.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="20.0sp" android:textStyle="bold" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/caption_dialog_title" />
+    <RadioGroup android:orientation="horizontal" android:paddingTop="10.0dip" android:paddingBottom="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <RadioButton android:textSize="16.0sp" android:textColor="@color/white" android:id="@id/enable_captions_btn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:text="@string/on" />
+        <RadioButton android:textSize="16.0sp" android:textColor="@color/white" android:id="@id/disable_captions_btn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/off" />
+    </RadioGroup>
+    <TextView android:textColor="@color/white" android:id="@id/captions_dialog_msg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/closed_captioning_unavailable" />
+    <TextView android:textSize="18.0sp" android:textColor="#ff33b5e5" android:id="@id/captions_dialog_options_link" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:text="@string/advanced_options" />
+    <Button android:id="@id/closed_captioning_dialog_btn" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:layout_marginBottom="15.0dip" android:text="@string/done" />
+</LinearLayout>

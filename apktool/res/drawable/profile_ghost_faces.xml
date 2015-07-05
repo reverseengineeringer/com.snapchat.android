@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list android:id="@id/profile_ghost_faces" android:oneshot="false"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:duration="200" android:drawable="@drawable/ghost_face_thumb_heart_eyes" />
+    <item android:duration="200" android:drawable="@drawable/ghost_face_thumb_wink" />
+    <item android:duration="200" android:drawable="@drawable/ghost_face_thumb_grimace" />
+    <item android:duration="200" android:drawable="@drawable/ghost_face_thumb_confused" />
+    <item android:duration="200" android:drawable="@drawable/ghost_face_thumb_smile" />
+</animation-list>

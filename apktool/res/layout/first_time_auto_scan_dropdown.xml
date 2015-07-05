@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.snapchat.android.scan.FirstAutoScanNotificationView android:background="@color/white" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/notification_bar_height"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/snapcode_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/default_gap" android:layout_marginTop="@dimen/default_gap" android:layout_marginRight="@dimen/default_gap" android:layout_marginBottom="@dimen/default_gap" android:src="@drawable/auto_snapcode" android:layout_centerVertical="true" />
+    <RelativeLayout android:id="@id/yes_button_container" android:clickable="true" android:layout_width="52.0dip" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/default_gap" android:layout_alignParentEnd="true">
+        <View android:background="@color/ptr_background_gray" android:layout_width="1.0dip" android:layout_height="fill_parent" android:layout_marginTop="15.0dip" android:layout_marginBottom="15.0dip" />
+        <TextView android:textStyle="bold" android:textColor="@color/purple" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/default_gap" android:layout_marginRight="@dimen/default_gap" android:text="@string/first_auto_yes_button_title" android:layout_centerInParent="true" />
+    </RelativeLayout>
+    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toLeftOf="@id/yes_button_container" android:layout_toRightOf="@id/snapcode_icon" android:layout_centerVertical="true">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/first_auto_add_title" />
+        <TextView android:textSize="@dimen/text_size_fine_print" android:textColor="@color/secondary_black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/first_auto_add_message" />
+    </LinearLayout>
+</com.snapchat.android.scan.FirstAutoScanNotificationView>

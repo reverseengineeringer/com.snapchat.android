@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="18.0sp" android:textStyle="bold" android:padding="16.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Caption Options" />
+    <View android:background="#ff666666" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <LinearLayout android:gravity="center" android:id="@id/closed_captioning_options_example_captions_container" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="16.0dip">
+        <com.brightcove.player.captioning.BrightcoveClosedCaptioningTextView android:gravity="center" android:id="@id/closed_captioning_options_example_captions" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minHeight="50.0dip" android:text="@string/closed_captioning_preview_text" />
+    </LinearLayout>
+    <View android:background="#ff666666" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <ExpandableListView android:id="@id/closed_captioning_options_list" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
+    <View android:background="#ff666666" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <Button android:textSize="18.0sp" android:textColor="#ff33b5e5" android:gravity="center" android:id="@id/closed_captioning_options_done_button" android:background="@null" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="65.0dip" android:text="@string/done" />
+</LinearLayout>

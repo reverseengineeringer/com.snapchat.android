@@ -1,0 +1,20 @@
+import com.google.gson.annotations.SerializedName;
+
+@tn
+public final class amz$a
+  extends pl
+{
+  @SerializedName("new_password")
+  String a;
+  
+  public amz$a(amz paramamz, @cgb String paramString)
+  {
+    a = paramString;
+  }
+}
+
+/* Location:
+ * Qualified Name:     amz.a
+ * Java Class Version: 6 (50.0)
+ * JD-Core Version:    0.7.1
+ */

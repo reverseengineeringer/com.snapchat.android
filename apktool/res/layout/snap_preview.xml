@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:gravity="center_vertical" android:id="@id/snap_preview_frame_layout" android:background="@color/black" android:focusable="true" android:focusableInTouchMode="true" android:clickable="true" android:clipChildren="false" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.snapchat.android.ui.SnapEditorView android:id="@id/snap_editor_view" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <RelativeLayout android:gravity="center_vertical" android:id="@id/snap_preview_decor_relative_layout" android:background="@null" android:clipChildren="false" android:layout_width="fill_parent" android:layout_height="fill_parent"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <ImageButton android:id="@id/picture_x" android:background="@drawable/aa_snap_preview_x" android:layout_width="66.66dip" android:layout_height="66.66dip" android:layout_marginLeft="2.0dip" android:layout_marginTop="2.0dip" />
+        <ImageButton android:id="@id/drawing_btn" android:background="@drawable/aa_snap_preview_color_picker_button" android:layout_width="48.659973dip" android:layout_height="66.66dip" android:layout_marginTop="6.659973dip" android:layout_marginRight="11.329987dip" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+        <ViewStub android:id="@id/drawing_tools_stub" android:layout="@layout/snap_preview_drawing_tools" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <ViewStub android:id="@id/caption_color_pick_tools_stub" android:layout="@layout/snap_preview_caption_color_pick_tools" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <Button android:id="@id/toggle_caption_btn" android:background="@drawable/text_button" android:layout_width="48.659973dip" android:layout_height="66.66dip" android:layout_marginTop="6.659973dip" android:layout_marginRight="1.0dip" android:layout_toLeftOf="@id/drawing_btn" android:layout_alignWithParentIfMissing="true" />
+        <RelativeLayout android:id="@id/picture_view_menu" android:paddingLeft="4.0dip" android:paddingBottom="2.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+            <CheckBox android:id="@id/mute_button" android:background="@drawable/mute_button_selector" android:visibility="gone" android:layout_width="61.659973dip" android:layout_height="66.66dip" android:button="@null" />
+            <ImageButton android:entries="@array/times" android:id="@id/time_picker_button" android:background="@drawable/aa_snap_preview_timer" android:layout_width="61.659973dip" android:layout_height="66.66dip" />
+            <TextView android:textSize="15.0dip" android:textColor="@android:color/white" android:gravity="center" android:id="@id/display_time" android:layout_width="61.659973dip" android:layout_height="wrap_content" android:layout_marginBottom="21.0dip" android:layout_alignLeft="@id/time_picker_button" android:layout_alignBottom="@id/time_picker_button" />
+            <ImageButton android:id="@id/picture_save_pic" android:background="@drawable/aa_snap_preview_save" android:layout_width="61.659973dip" android:layout_height="66.66dip" android:layout_toRightOf="@id/time_picker_button" />
+            <ImageButton android:id="@id/story_button" android:background="@drawable/aa_snap_preview_post_story" android:layout_width="61.659973dip" android:layout_height="66.66dip" android:layout_toRightOf="@id/picture_save_pic" />
+            <ImageButton android:id="@id/picture_send_pic" android:background="@drawable/send_snappreview" android:layout_width="61.659973dip" android:layout_height="66.66dip" android:layout_marginRight="10.665985dip" android:layout_marginBottom="2.3329773dip" android:layout_alignParentRight="true" />
+        </RelativeLayout>
+        <ViewStub android:id="@id/caption_onboarding_stub" android:layout="@layout/snap_preview_caption_onboarding" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" />
+        <ViewStub android:id="@id/swipe_filters_onboarding_stub" android:layout="@layout/snap_preview_swipe_filters_onboarding" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" />
+        <ViewStub android:id="@id/story_send_stub" android:layout="@layout/snap_preview_story_send_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_above="@id/bottom_panel" />
+        <ViewStub android:id="@id/send_to_bottom_panel_stub" android:layout="@layout/snap_preview_send_to_bottom_panel" android:layout_width="fill_parent" android:layout_height="@dimen/send_to_bottom_panel_height" android:layout_alignParentBottom="true" />
+        <ViewStub android:id="@id/time_picker_stub" android:layout="@layout/snap_time_picker" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+</FrameLayout>

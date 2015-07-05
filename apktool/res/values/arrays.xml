@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="camera_orientation_choices">
+        <item>@string/camera_orientation_standard</item>
+        <item>@string/camera_orientation_rotate_180</item>
+    </string-array>
+    <string-array name="dialog_menu_items_for_blocked_friend">
+        <item>@string/friends_context_edit_name</item>
+        <item>@string/delete_friend</item>
+        <item>@string/friends_context_unblock</item>
+        <item>@string/cancel</item>
+    </string-array>
+    <string-array name="dialog_menu_items_for_blocked_snapchatter">
+        <item>@string/friends_context_unblock</item>
+        <item>@string/cancel</item>
+    </string-array>
+    <string-array name="dialog_menu_items_for_nearby_snapchatter">
+        <item>@string/friends_context_block</item>
+        <item>@string/cancel</item>
+    </string-array>
+    <string-array name="dialog_menu_items_for_unblocked_friend">
+        <item>@string/friends_context_edit_name</item>
+        <item>@string/delete_friend</item>
+        <item>@string/friends_context_block</item>
+        <item>@string/cancel</item>
+    </string-array>
+    <string-array name="dialog_menu_items_for_unblocked_new_request">
+        <item>@string/friends_context_edit_name</item>
+        <item>@string/ignore_friend_button</item>
+        <item>@string/friends_context_block</item>
+        <item>@string/cancel</item>
+    </string-array>
+    <string-array name="dialog_menu_items_for_unblocked_snapchatter">
+        <item>@string/friends_context_edit_name</item>
+        <item>@string/friends_context_block</item>
+        <item>@string/cancel</item>
+    </string-array>
+    <string-array name="notification_cash" formatted="false">
+        <item>&lt;g id="username1">%s&lt;/g> sent you %s</item>
+        <item>&lt;g id="username1">%s&lt;/g> and &lt;g id="username2">%s&lt;/g> sent you cash</item>
+        <item>&lt;g id="username1">%s&lt;/g> and others sent you cash</item>
+    </string-array>
+    <string-array name="notification_friend_request" formatted="false">
+        <item>&lt;g id="friend1">%s&lt;/g> added you!</item>
+        <item>&lt;g id="friend1">%s&lt;/g> and &lt;g id="friend2">%s&lt;/g> added you!</item>
+        <item>&lt;g id="friend1">%s&lt;/g> and others added you!</item>
+    </string-array>
+    <string-array name="notification_replay" formatted="false">
+        <item>&lt;g id="username1">%s&lt;/g> replayed your Snap!</item>
+        <item>&lt;g id="username1">%s&lt;/g> and &lt;g id="username2">%s&lt;/g> replayed your Snaps!</item>
+        <item>&lt;g id="username1">%s&lt;/g> and others replayed your Snaps!</item>
+    </string-array>
+    <string-array name="notification_screenshot" formatted="false">
+        <item>&lt;g id="username1">%s&lt;/g> took a screenshot!</item>
+        <item>&lt;g id="username1">%s&lt;/g> and &lt;g id="username2">%s&lt;/g> took screenshots!</item>
+        <item>&lt;g id="username1">%s&lt;/g> and others took screenshots!</item>
+    </string-array>
+    <string-array name="notification_typing" formatted="false">
+        <item>&lt;g id="username1">%s&lt;/g> is typing…</item>
+        <item>&lt;g id="username1">%s&lt;/g> and &lt;g id="username2">%s&lt;/g> are typing…</item>
+        <item>&lt;g id="username1">%s&lt;/g> and others are typing…</item>
+    </string-array>
+    <string-array name="num_best_friends_choices">
+        <item>3</item>
+        <item>5</item>
+        <item>7</item>
+    </string-array>
+    <string-array name="snap_privacy_options">
+        <item>@string/settings_privacy_everyone</item>
+        <item>@string/settings_privacy_my_friends</item>
+    </string-array>
+    <string-array name="story_privacy_options">
+        <item>@string/settings_privacy_everyone</item>
+        <item>@string/settings_privacy_my_friends</item>
+        <item>@string/settings_privacy_custom</item>
+    </string-array>
+    <string-array name="times">
+        <item>@string/sec1</item>
+        <item>@string/sec2</item>
+        <item>@string/sec3</item>
+        <item>@string/sec4</item>
+        <item>@string/sec5</item>
+        <item>@string/sec6</item>
+        <item>@string/sec7</item>
+        <item>@string/sec8</item>
+        <item>@string/sec9</item>
+        <item>@string/sec10</item>
+    </string-array>
+    <string-array name="video_quality_choices">
+        <item>@string/video_quality_standard</item>
+        <item>@string/video_quality_low</item>
+        <item>@string/video_quality_automatic</item>
+    </string-array>
+</resources>

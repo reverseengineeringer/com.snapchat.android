@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="dialog_menu_items_for_blocked_friend">
+        <item>@string/friends_context_edit_name</item>
+        <item>@string/delete_friend</item>
+        <item>@string/friends_context_unblock</item>
+        <item>@string/cancel</item>
+    </string-array>
+    <string-array name="dialog_menu_items_for_blocked_snapchatter">
+        <item>@string/friends_context_unblock</item>
+        <item>@string/cancel</item>
+    </string-array>
+    <string-array name="dialog_menu_items_for_nearby_snapchatter">
+        <item>@string/friends_context_block</item>
+        <item>@string/cancel</item>
+    </string-array>
+    <string-array name="dialog_menu_items_for_unblocked_friend">
+        <item>@string/friends_context_edit_name</item>
+        <item>@string/delete_friend</item>
+        <item>@string/friends_context_block</item>
+        <item>@string/cancel</item>
+    </string-array>
+    <string-array name="dialog_menu_items_for_unblocked_new_request">
+        <item>@string/friends_context_edit_name</item>
+        <item>@string/ignore_friend_button</item>
+        <item>@string/friends_context_block</item>
+        <item>@string/cancel</item>
+    </string-array>
+    <string-array name="dialog_menu_items_for_unblocked_snapchatter">
+        <item>@string/friends_context_edit_name</item>
+        <item>@string/friends_context_block</item>
+        <item>@string/cancel</item>
+    </string-array>
+    <string-array name="notification_cash">
+        <item>&lt;g id="username1">%1$s&lt;/g> 님이 %2$s를 보냈습니다.</item>
+        <item>&lt;g id="username1">%1$s&lt;/g> 님과 &lt;g id="username2">%2$s&lt;/g> 님이 현금을 보냈습니다.</item>
+        <item>&lt;g id="username1">%1$s&lt;/g> 님 외 여러 명이 현금을 보냈습니다.</item>
+    </string-array>
+    <string-array name="notification_friend_request">
+        <item>&lt;g id="friend1">%1$s&lt;/g> 님이 회원님을 추가했습니다!</item>
+        <item>&lt;g id="friend1">%1$s&lt;/g> 님과 &lt;g id="friend2">%2$s&lt;/g> 님이 회원님을 추가했습니다!</item>
+        <item>&lt;g id="friend1">%1$s&lt;/g> 님 외 여러 명이 회원님을 추가했습니다!</item>
+    </string-array>
+    <string-array name="notification_replay">
+        <item>&lt;g id="username1">%1$s&lt;/g> 님이 회원님의 스냅을 다시 보기했습니다!</item>
+        <item>&lt;g id="username1">%1$s&lt;/g> 님과 &lt;g id="username2">%2$s&lt;/g> 님이 회원님의 스냅을 다시 보기했습니다!</item>
+        <item>&lt;g id="username1">%1$s&lt;/g> 님 외 여러 명이 회원님의 스냅을 다시 보기했습니다!</item>
+    </string-array>
+    <string-array name="notification_screenshot">
+        <item>&lt;g id="username1">%1$s&lt;/g> 님이 스크린샷을 찍었습니다!</item>
+        <item>&lt;g id="username1">%1$s&lt;/g> 님과 &lt;g id="username2">%2$s&lt;/g> 님이 스크린샷을 찍었습니다!</item>
+        <item>&lt;g id="username1">%1$s&lt;/g> 님 외 여러 명이 스크린샷을 찍었습니다!</item>
+    </string-array>
+    <string-array name="notification_typing">
+        <item>&lt;g id="username1">%1$s&lt;/g> 님이 메시지 입력 중…</item>
+        <item>&lt;g id="username1">%1$s&lt;/g> 님과 &lt;g id="username2">%2$s&lt;/g> 님이 메시지 입력 중...</item>
+        <item>&lt;g id="username1">%1$s&lt;/g> 님 외 여러 명이 메시지 입력 중...</item>
+    </string-array>
+</resources>

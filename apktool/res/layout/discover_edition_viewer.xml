@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@android:color/black" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.snapchat.android.discover.ui.fragment.EditionViewerPager android:id="@id/edition_viewer_pager" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <com.snapchat.android.discover.ui.FadeFullScreenAnimationView android:id="@id/discover_close_animation" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</RelativeLayout>

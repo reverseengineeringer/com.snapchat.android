@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="dialog_menu_items_for_blocked_friend">
+        <item>@string/friends_context_edit_name</item>
+        <item>@string/delete_friend</item>
+        <item>@string/friends_context_unblock</item>
+        <item>@string/cancel</item>
+    </string-array>
+    <string-array name="dialog_menu_items_for_blocked_snapchatter">
+        <item>@string/friends_context_unblock</item>
+        <item>@string/cancel</item>
+    </string-array>
+    <string-array name="dialog_menu_items_for_nearby_snapchatter">
+        <item>@string/friends_context_block</item>
+        <item>@string/cancel</item>
+    </string-array>
+    <string-array name="dialog_menu_items_for_unblocked_friend">
+        <item>@string/friends_context_edit_name</item>
+        <item>@string/delete_friend</item>
+        <item>@string/friends_context_block</item>
+        <item>@string/cancel</item>
+    </string-array>
+    <string-array name="dialog_menu_items_for_unblocked_new_request">
+        <item>@string/friends_context_edit_name</item>
+        <item>@string/ignore_friend_button</item>
+        <item>@string/friends_context_block</item>
+        <item>@string/cancel</item>
+    </string-array>
+    <string-array name="dialog_menu_items_for_unblocked_snapchatter">
+        <item>@string/friends_context_edit_name</item>
+        <item>@string/friends_context_block</item>
+        <item>@string/cancel</item>
+    </string-array>
+    <string-array name="notification_cash">
+        <item>&lt;g id="username1">%1$s&lt;/g> sent you %2$s</item>
+        <item>&lt;g id="username1">%1$s&lt;/g> and &lt;g id="username2">%2$s&lt;/g> sent you cash</item>
+        <item>&lt;g id="username1">%1$s&lt;/g> and others sent you cash</item>
+    </string-array>
+    <string-array name="notification_friend_request">
+        <item>&lt;g id="friend1">%1$s&lt;/g> added you!</item>
+        <item>&lt;g id="friend1">%1$s&lt;/g> and &lt;g id="friend2">%2$s&lt;/g> added you!</item>
+        <item>&lt;g id="friend1">%1$s&lt;/g> and others added you!</item>
+    </string-array>
+    <string-array name="notification_replay">
+        <item>&lt;g id="username1">%1$s&lt;/g> replayed your Snap!</item>
+        <item>&lt;g id="username1">%1$s&lt;/g> and &lt;g id="username2">%2$s&lt;/g> replayed your Snaps!</item>
+        <item>&lt;g id="username1">%1$s&lt;/g> and others replayed your Snaps!</item>
+    </string-array>
+    <string-array name="notification_screenshot">
+        <item>&lt;g id="username1">%1$s&lt;/g> took a screenshot!</item>
+        <item>&lt;g id="username1">%1$s&lt;/g> and &lt;g id="username2">%2$s&lt;/g> took screenshots!</item>
+        <item>&lt;g id="username1">%1$s&lt;/g> and others took screenshots!</item>
+    </string-array>
+    <string-array name="notification_typing">
+        <item>&lt;g id="username1">%1$s&lt;/g> is typing…</item>
+        <item>&lt;g id="username1">%1$s&lt;/g> and &lt;g id="username2">%2$s&lt;/g> are typing…</item>
+        <item>&lt;g id="username1">%1$s&lt;/g> and others are typing…</item>
+    </string-array>
+</resources>

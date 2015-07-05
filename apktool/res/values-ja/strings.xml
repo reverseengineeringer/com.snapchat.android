@@ -1,0 +1,750 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ad_sent_from_discover">Discover経由で送信された広告</string>
+    <string name="add">追加</string>
+    <string name="add_by_snapcode">Snapcodeで追加</string>
+    <string name="add_by_snapcode_auto_tip">"Snapcodeを使うと、簡単に友だちを追加できます。
+Snapcodeのスクリーンショットを撮って
+Snapchatを開いてね！"</string>
+    <string name="add_by_snapcode_manual_tip">"Snapcodeを使うと、簡単に友だちを追加できます。
+Snapcodeの自動追加を有効にしてから
+Snapcodeのスクリーンショットを撮って、Snapchatを開いてね！"</string>
+    <string name="add_by_username">ユーザー名で追加</string>
+    <string name="add_by_username_description">"私のユーザー名：
+"<g example="team_snapchat" id="username">%1$s</g></string>
+    <string name="add_by_username_search_hint">ユーザー名</string>
+    <string name="add_friend_group_title">友だちを追加</string>
+    <string name="add_friend_question">%1$s さんを追加しますか?</string>
+    <string name="add_friend_request_pending">保留中</string>
+    <string name="add_friend_request_pending_with_username">保留中 - <g id="username">%1$s</g></string>
+    <string name="add_friends_contacts_permission_explanation_text">"あなたの電話番号をアドレス帳に登録している友だちは、Snapchatであなたを検索することができます。
+
+Snapchatは、友だちの自動追加やスパム送信は行いません。
+
+詳細は"<a href="http://www.snapchat.com/privacy">プライバシーポリシー</a>をご覧ください。</string>
+    <string name="add_friends_contacts_permission_text">Snapchatは、アドレス帳内の電話番号を利用して友だち探しをします。</string>
+    <string name="add_friends_could_not_add">"友だちに追加できませんでした。 再度試してください。 "</string>
+    <string name="add_friends_could_not_find_contacts">連絡先が見つかりませんでした。</string>
+    <string name="add_friends_could_not_find_friends">新しい友だちは見つかりませんでした</string>
+    <string name="add_friends_could_not_remove">友だちから削除できませんでした。再度試してください。</string>
+    <string name="add_friends_displayname_desc">私の名前：</string>
+    <string name="add_friends_displayname_following_desc">が追加したSnapchatterから見えるあなたの表示名です。</string>
+    <string name="add_friends_empty_address_book">アドレス帳が空だよ！</string>
+    <string name="add_friends_finding_friends_text">友だちを検索中・・・</string>
+    <string name="add_friends_from_screenshot_tips">"Snapcodeのついた写真をタップすると
+そのSnapchatterを追加できるよ！"</string>
+    <string name="add_friends_from_screenshot_title">写真</string>
+    <string name="add_friends_invite_contacts">Snapchatに招待</string>
+    <string name="add_friends_no_friend_requests">新しい友だちはいません</string>
+    <string name="add_friends_on_snapchat">アドレス帳に含まれるSnapchatter</string>
+    <string name="add_friends_pending_snap">1件の保留中のSnap</string>
+    <string name="add_friends_pending_snaps">%1$d件の保留中のSnap</string>
+    <string name="add_friends_shared_story">%1$sはユーザーから集まったイベントのSnapのコレクションです。イベントが終了するまで、ストーリーに表示されます。Snap生活を楽しんでね！</string>
+    <string name="add_friends_title">友だちの追加</string>
+    <string name="add_friends_username_desc">私のユーザー名：</string>
+    <string name="add_friends_username_following_desc">があなたのユーザー名です。</string>
+    <string name="add_friends_who_added_me">私を追加した友だち</string>
+    <string name="add_from_address_book">アドレス帳から追加</string>
+    <string name="add_from_camera_roll">写真から追加</string>
+    <string name="add_nearby">近くにいる人を追加</string>
+    <string name="add_nearby_friends_title">近くにいる人を追加</string>
+    <string name="add_nearby_prompt">「近くにいる人を追加」機能は、位置情報を使用して近くにいるSnapchatterを検索して追加します。あなたの名前は他のSnapchatterから見ることができます。</string>
+    <string name="add_to_your_story">ストーリーに追加しますか？</string>
+    <string name="add_to_your_story_explanation">"ストーリーにSnapを追加すると
+他のユーザーに対して閲覧回数制限なしで
+24時間公開されます。
+ストーリーにこのSnapを追加しますか？"</string>
+    <string name="added">追加したよ！</string>
+    <string name="added_expiration_message">%1$sはユーザーから集まったイベントのSnapのコレクションです。イベントが終了するまで、ストーリーに表示されます。Snap生活を楽しんでね！</string>
+    <string name="added_friend">追加されました</string>
+    <string name="added_me_button">私を追加した友だち</string>
+    <string name="added_me_title">私を追加した友だち</string>
+    <string name="added_you">に追加されたよ！</string>
+    <string name="added_you_by_phone_number">あなたを電話番号で追加しました</string>
+    <string name="added_you_by_qr_code">あなたをSnapで追加しました</string>
+    <string name="added_you_by_username">あなたをユーザー名で追加しました</string>
+    <string name="address_book_title">アドレス帳</string>
+    <string name="already_friends">すでに友だちに登録されてるよ！<g id="emoji">%1$s</g></string>
+    <string name="an_error_occurred">エラーが発生しました。</string>
+    <string name="app_name">Snapchat</string>
+    <string name="are_you_sure_you_want_to_abandon">本当にこの作品を破棄しますか？</string>
+    <string name="ask_a_nearby_friend">友だちを追加するときは、相手に「近くにいる人を追加」を開いてもらってね。</string>
+    <string name="audio_header">録音</string>
+    <string name="audio_setting_header">音声設定の変更</string>
+    <string name="audio_setting_text">一部のデバイスでは、Snapchatが音声設定を調整するとビデオチャットが可能になります。</string>
+    <string name="audio_text">マイクを使用して、Snapおよびビデオチャット用に録音します。</string>
+    <string name="auto_add_snapcodes">Snapcodeを自動追加</string>
+    <string name="auto_add_snapcodes_detail">"デバイスの写真に自動的にSnapcodeが
+追加されます。"</string>
+    <string name="best_friends_score">スコア：%1$s</string>
+    <string name="bestfriend_group_title">仲良し</string>
+    <string name="beta_splash_message">"Snapchat ベータ版をインストールしていただきありがとうございます!
+ベータテスト参加者は、不具合の修正などにご協力いただく代わりに最新機能を体験していただけます。
+
+Snapchatの改善にご協力ありがとうございます！"</string>
+    <string name="block_and_report_title">ブロックする理由を教えてください。</string>
+    <string name="block_confirm_message">あなたはブロックした相手の友だちから削除され、ブロックを解除するまでこのアカウントから相手の友だちに再び追加されることはありません。</string>
+    <string name="block_friend_button">ブロック</string>
+    <string name="block_friend_title">本当に%1$sをブロックしますか？</string>
+    <string name="block_friend_title_with_display_name">本当に%1$s - %2$sをブロックしますか？</string>
+    <string name="block_reason_annoying">面倒くさい</string>
+    <string name="block_reason_dont_know_whom">知らない人だから</string>
+    <string name="block_reason_harassing_me">嫌がらせを受けている</string>
+    <string name="block_reason_inappropriate_content">不適切なコンテンツ</string>
+    <string name="block_reason_other">その他</string>
+    <string name="blocked_group_title">ブロックしています</string>
+    <string name="blocked_title">ブロックしています</string>
+    <string name="blocking_secondary_text">%1$s - ブロック中・・・</string>
+    <string name="camera_insert_sd_card">動画を撮影するには、SDカードを挿入してください</string>
+    <string name="camera_insert_sd_card_to_watch">SDカードがないと動画を再生できません</string>
+    <string name="camera_onboarding_message">"&lt;font color='#FF9900'>タップで&lt;/font>&lt;font color='#FFFFFF'>写真撮影。 &lt;/font>&lt;font color='#FF9900'>長押しで&lt;/font> &lt;font color='#FFFFFF'>動画撮影。&lt;/font>"</string>
+    <string name="camera_orientation_rotate_180">180°回転</string>
+    <string name="camera_orientation_standard">標準</string>
+    <string name="camera_sd_card_being_checked">"SDカードを確認しています。
+少し待ってから再度試してください。"</string>
+    <string name="camera_sd_card_issue">SDカードに問題があります</string>
+    <string name="camera_sd_card_mounted_to_computer">"SDカードがコンピュータに接続されている状態では録画はできません。
+USBケーブルを外してください。"</string>
+    <string name="cancel">キャンセル</string>
+    <string name="cannot_add_recipients">これ以上Snapchatterを追加できないよ！</string>
+    <string name="cannot_unlink_card">カードのリンクを解除できませんでした。再度試してください。</string>
+    <string name="captcha_failed_to_load">画像の読み込み時にエラーが発生しました。インターネットの接続状況をが良好であることを確認し、再度試してください。</string>
+    <string name="captcha_loading_images">画像を読み込み中・・・</string>
+    <string name="captcha_not_quite_right">" 全部選べてないよ！ もう一度挑戦してください。 "</string>
+    <string name="caption_onboarding_message">タップで見出しを追加！</string>
+    <string name="card_back_cvv_instructions">CVVを入力してください</string>
+    <string name="card_back_zip_instructions">請求先郵便番号を入力してください</string>
+    <string name="card_blocked">異常なアクティビティのためにカードがブロックされています。</string>
+    <string name="card_cvv">CVV</string>
+    <string name="card_debit_card">デビット カード</string>
+    <string name="card_declined">カードが拒否されました。</string>
+    <string name="card_expiration">MM/YY</string>
+    <string name="card_front_instructions">"デビットカードを
+スキャンまたは入力してください。"</string>
+    <string name="card_link_disclaimer">続行することにより、こちらの情報はSnapchatとSquareそれぞれのプライバシーポリシーに従い、両社に渡されます。</string>
+    <string name="card_linked_too_many_accounts">カードとリンクしたアカウントが多過ぎます。</string>
+    <string name="card_number">カード番号</string>
+    <string name="card_unsupported">サポートされていないカードです。</string>
+    <string name="card_unsupported_details">米国内で発行されたデビットカードを使用してください。</string>
+    <string name="card_zip">5桁の郵便番号（米国）</string>
+    <string name="cash_ineligible_details">現時点では、Snapcashを使用する資格がありません。</string>
+    <string name="cash_phone_verification_desc">"Snapcashをご利用になる前に
+米国の電話番号による認証をしてください。"</string>
+    <string name="cash_phone_verification_title">電話番号を認証</string>
+    <string name="cash_square_tos_agree">同意します</string>
+    <string name="cash_square_tos_bottom_msg">" 私は18歳以上で、"<a href="https://squareup.com/legal/cash-user-agreement">Squareの同意事項</a>および<a href="https://squareup.com/legal/privacy-policy">Squareのプライバシーポリシー</a>"に同意します。 "</string>
+    <string name="cash_square_tos_title">サービス規約</string>
+    <string name="cash_square_tos_top_msg">"Snapcashは、SnapchatとSquareの連携によるサービスです。Snapcashに登録することによって
+Squareアカウントが作成され支払いを安全に処理することができます。"</string>
+    <string name="cash_tooltip">タップしてキャッシュを送金！</string>
+    <string name="cash_verify_identity">IDを認証</string>
+    <string name="change_password_recommendation">小文字、大文字、数字および記号を組み合わせた適切なパスワードを設定してください。</string>
+    <string name="chat_cannot_play_video">このビデオをチャットで再生することはできません</string>
+    <string name="chat_cash_could_not_receive_message">$%1$sを受け取れませんでした</string>
+    <string name="chat_cash_failed_to_send_message">$%1$sの送金に失敗しました</string>
+    <string name="chat_cash_received_expired">$%1$sの期限が切れました</string>
+    <string name="chat_cash_received_money">$%1$sを受け取りました</string>
+    <string name="chat_cash_receiving_money">$%1$sの受け取り中</string>
+    <string name="chat_cash_reversed_message">"異常なアクティビティにより
+チャージが取り消されました"</string>
+    <string name="chat_cash_tap_to_receive">タップして$%1$sを受け取る</string>
+    <string name="chat_cash_tap_to_resolve">タップして解決 - $%1$s</string>
+    <string name="chat_date_header_today">今日</string>
+    <string name="chat_date_header_yesterday">昨日</string>
+    <string name="chat_emoji_quick_send">送信</string>
+    <string name="chat_header_failed">チャットの読み込み失敗 - タップで再読み込み</string>
+    <string name="chat_header_loading">読み込み中・・・</string>
+    <string name="chat_link_action_call">電話する</string>
+    <string name="chat_link_action_open_link">リンク先へ移動</string>
+    <string name="chat_link_action_save_chat">チャットを保存</string>
+    <string name="chat_link_action_unsave_chat">チャットの保存を解除</string>
+    <string name="chat_list_item_header_alert">アラート</string>
+    <string name="chat_message_input_box_hint"><i>チャットを送信</i></string>
+    <string name="chat_save">チャットに保存したよ！</string>
+    <string name="chat_took_chat_screenshot">" "<g example="NAGAS" id="username">%1$s</g>"さんがチャットのスクリーンショットを撮ったよ! "</string>
+    <string name="chat_took_snap_screenshot">" "<g example="NAGAS" id="username">%1$s</g>"さんがスクリーンショットを撮りました! "</string>
+    <string name="chat_transaction_verify_phone_number_message">"Snapcashをご利用になる前に
+電話番号による認証をお願いします。"</string>
+    <string name="chat_transaction_verify_phone_number_title">電話番号を認証</string>
+    <string name="chat_unsave">チャットの保存を解除しました!</string>
+    <string name="chat_with_no_results">検索結果なし</string>
+    <string name="chat_with_title">チャット相手・・・</string>
+    <string name="chat_you_took_chat_screenshot">チャットのスクリーンショットを撮ったよ!</string>
+    <string name="chat_you_took_snap_screenshot">スクリーンショットを撮ったよ!</string>
+    <string name="check_connection_message">接続を確認してから再度試してください。</string>
+    <string name="common_android_wear_notification_needs_update_text">Android Wearアプリの更新が必要です。</string>
+    <string name="common_android_wear_update_text">Android Wearアプリを使用するにはアプリの更新が必要です。</string>
+    <string name="common_android_wear_update_title">Android Wearの更新</string>
+    <string name="common_google_play_services_enable_button">Play開発者サービスの有効化</string>
+    <string name="common_google_play_services_enable_text">このアプリの実行には、Google Play開発者サービスの有効化が必要です。</string>
+    <string name="common_google_play_services_enable_title">Play開発者サービスの有効化</string>
+    <string name="common_google_play_services_error_notification_requested_by_msg"><g id="APP_NAME">%1$s</g>によるリクエスト</string>
+    <string name="common_google_play_services_install_button">Play開発者サービスの入手</string>
+    <string name="common_google_play_services_install_text_phone">このアプリの実行にはGoogle Play開発者サービスが必要ですが、お使いの携帯端末にはインストールされていません。</string>
+    <string name="common_google_play_services_install_text_tablet">このアプリの実行にはGoogle Play開発者サービスが必要ですが、お使いのタブレットにはインストールされていません。</string>
+    <string name="common_google_play_services_install_title">Play開発者サービスの入手</string>
+    <string name="common_google_play_services_invalid_account_text">指定したアカウントはこの端末上に存在しません。別のアカウントを選択してください。</string>
+    <string name="common_google_play_services_invalid_account_title">無効なアカウント</string>
+    <string name="common_google_play_services_needs_enabling_title">アプリではGoogle Play開発者サービスを有効にする必要があります</string>
+    <string name="common_google_play_services_network_error_text">Google Play開発者サービスに接続するには、データ接続が必要です。</string>
+    <string name="common_google_play_services_network_error_title">ネットワークエラー</string>
+    <string name="common_google_play_services_notification_needs_installation_title">アプリではGoogle Play開発者サービスをインストールする必要があります</string>
+    <string name="common_google_play_services_notification_needs_update_title">アプリではGoogle Play開発者サービスを更新する必要があります</string>
+    <string name="common_google_play_services_notification_ticker">Google Play開発者サービスのエラー</string>
+    <string name="common_google_play_services_sign_in_failed_text">指定されたアカウントへのログイン中にエラーが発生しました。別のアカウントを選択してください。</string>
+    <string name="common_google_play_services_sign_in_failed_title">ログインできませんでした</string>
+    <string name="common_google_play_services_unknown_issue">Google Play開発者サービスで原因不明の問題が発生しました。</string>
+    <string name="common_google_play_services_unsupported_text">一部のアプリが使用しているGoogle Play開発者サービスは、お使いの端末ではサポートされていません。詳しくは、端末メーカーまでお問い合わせください。</string>
+    <string name="common_google_play_services_unsupported_title">Google Play開発者サービス</string>
+    <string name="common_google_play_services_update_button">更新</string>
+    <string name="common_google_play_services_update_text">このアプリの実行には、Google Play開発者サービスの更新が必要です。</string>
+    <string name="common_google_play_services_update_title">Play開発者サービスの更新</string>
+    <string name="common_open_on_phone">端末で開く</string>
+    <string name="common_signin_button_text">ログイン</string>
+    <string name="common_signin_button_text_long">Googleでログイン</string>
+    <string name="commono_google_play_services_api_unavailable_text">このアプリには現在利用されていないGoogle Play開発者サービスが必要です。詳しくはデベロッパーにお問い合わせください。</string>
+    <string name="confirm_delete_snapkidz">本当にSnapkidzアカウントを削除しますか？このアクションは取り消しできません。</string>
+    <string name="confirm_password_field_hint"><i>パスワードの確認</i></string>
+    <string name="confirm_phone_number_call">電話認証</string>
+    <string name="confirm_phone_number_calling">電話中・・・</string>
+    <string name="confirm_phone_number_country_code">国コード</string>
+    <string name="confirm_phone_number_phone_number_field_hint"><i>携帯電話番号</i></string>
+    <string name="confirm_phone_number_select_country_code_dialog_title">国コードを選択してください</string>
+    <string name="confirm_phone_number_text">SMSで送信</string>
+    <string name="confirm_phone_number_verification_code_hint"><i>認証コード</i></string>
+    <string name="confirm_phone_number_verified">認証完了！</string>
+    <string name="confirm_phone_number_verify">認証</string>
+    <string name="connect_an_sd_card">動画Snapを閲覧するには、SDカードを挿入してね！</string>
+    <string name="contact_card_header">自分の連絡先カードの読み取り</string>
+    <string name="contact_card_text">Snapchatの設定を編集するときに お客様の氏名が自動入力されます。</string>
+    <string name="contact_header">連絡先の読み取り</string>
+    <string name="contact_nonsnapchatter_secondary_text"><g example="412-412-4124" id="phone_number">%1$s</g></string>
+    <string name="contact_text">Snapchatは、友だちの招待やアプリの改善のために、デバイスのアドレス帳から情報を収集して使用することがあります。</string>
+    <string name="contacts">連絡先</string>
+    <string name="content_description_chat_discover_bar_icon">このエディションのパブリッシャー</string>
+    <string name="content_description_discover_header">Discoverのロゴ</string>
+    <string name="content_description_discover_loading_tap_to_retry">メディアのダウンロード失敗 - タップで再試行</string>
+    <string name="content_description_dsnap_loading_icon">Discoverエディションのインジケータを読み込んでいます</string>
+    <string name="content_descriptor_my_friends_friends_button">友だちのページに移動する</string>
+    <string name="could_not_delete">削除できませんでした。 再度試してください。</string>
+    <string name="could_not_hide_suggest_friend">非表示にできませんでした。 再度試してください。</string>
+    <string name="could_not_open_camera">"Snapchatはカメラを開けませんでした。
+アプリケーションまたはデバイスを再起動する必要があります。"</string>
+    <string name="could_not_refresh_messages">メッセージを更新できませんでした。 再度試してください</string>
+    <string name="could_not_refresh_stories">"ストーリーを更新できませんでした。再度試してください。 "</string>
+    <string name="could_not_send">送信できませんでした。 再度試してください。</string>
+    <string name="could_not_share_photos">共有できませんでした…</string>
+    <string name="could_not_take_photos">写真を撮ることができませんでした。</string>
+    <string name="count_me_in">仲間に入れて！</string>
+    <string name="degrees_celsius">°C</string>
+    <string name="degrees_fahrenheit">°F</string>
+    <string name="delete_failed_my_story_notification">Snapを削除できませんでした。 再度試してください。</string>
+    <string name="delete_friend">友だちを削除</string>
+    <string name="delete_my_story_notification">Snapの削除中・・・</string>
+    <string name="delete_snap_question">Snapを削除しますか？</string>
+    <string name="delete_snapkidz">Snapkidzアカウントの削除</string>
+    <string name="delete_story_text">削除</string>
+    <string name="delete_success_my_story_notification">Snapを削除したよ！</string>
+    <string name="delete_text">削除</string>
+    <string name="deleting_secondary_text">%1$s - 削除中・・・</string>
+    <string name="delivered">配信済み</string>
+    <string name="developer_camera_storage_issue">ストレージに問題が発生しました[%1$s]</string>
+    <string name="dialog_confirm_unblock_action">このSnapchatterのブロックを解除しますか？</string>
+    <string name="did_you_mean_email">もしかして%1$s ですか？</string>
+    <string name="discover_loading_disk_full_error_alert_title">ストレージがいっぱいです</string>
+    <string name="discover_loading_disk_full_error_msg">使用していないアプリや音楽や写真を削除して空きを作ってください。</string>
+    <string name="discover_loading_disk_full_error_title">ストレージがいっぱいだよ！</string>
+    <string name="discover_loading_generic_error_msg">問題が起きたようです。</string>
+    <string name="discover_loading_generic_error_toast">おっと！問題が起きたようです。</string>
+    <string name="discover_loading_network_error_msg">ネットワーク接続を確認してください。</string>
+    <string name="discover_loading_oops_title">おっと！</string>
+    <string name="discover_loading_sd_card_error_msg">Discoverを表示するには、SDカードを挿入してね！</string>
+    <string name="discover_loading_tap_to_retry">タップで再試行</string>
+    <string name="discover_no_current_edition_toast">詳しくは後ほど！</string>
+    <string name="discover_onboarding_press_and_hold_to_send">"長押しすると、このSnapを
+友だちに送信できます。"</string>
+    <string name="discover_onboarding_pull_to_close">プルダウンしてエディションを閉じる。</string>
+    <string name="discover_onboarding_swipe_to_advance">スワイプして次へ進む。</string>
+    <string name="discover_sharing_failed">Snapの送信に失敗しました。</string>
+    <string name="discover_sharing_screenshot">長押しすると、友だちに送信できます。</string>
+    <string name="discover_sharing_sending">送信中・・・</string>
+    <string name="discover_sharing_success">Snapを送信したよ！</string>
+    <string name="discover_sharing_unavailable">%1$sは、このSnapの送信を許可していません。</string>
+    <string name="discover_stories_header">DISCOVER</string>
+    <string name="discover_tooltip_message"><g id="grinning_face_emoji">%1$s</g>Discoverの詳細については、ここをタップしてね！</string>
+    <string name="discover_unavailable">"残念！
+
+Discoverは現在ご利用いただけません。"</string>
+    <string name="discover_unavailable_for_device">"残念！
+
+Discoverは現在ご使用のデバイスではご利用いただけません。"</string>
+    <string name="discover_unavailable_for_location">"残念！
+
+Discoverは
+現在お住まいの地域では
+ご利用不可能です。"</string>
+    <string name="displayName_field_hint"><i>名前</i></string>
+    <string name="display_name_info">追加したSnapchatterには、この名前で表示されます。</string>
+    <string name="dont_allow">許可しない</string>
+    <string name="dont_snap_and_drive">"運転中は絶対に
+Snapをしないでください。"</string>
+    <string name="double_tap_to_reply">ダブルタップして返信</string>
+    <string name="email_field_hint"><i>Eメールアドレス</i></string>
+    <string name="email_password_validation_explanation">セキュリティ保護のため、パスワードを入力してください。</string>
+    <string name="email_resend_succeed_message">認証メールを%1$sに送信しました。</string>
+    <string name="email_resend_succeed_title">メールをチェックしてね！</string>
+    <string name="email_resend_verification">認証メールの再送信</string>
+    <string name="email_resend_warning_message">新しいメールアドレスを認証すると、%1$sのアカウントとの連携は解除されます。</string>
+    <string name="email_sent_explanation">認証メールを送信しました。確認リンクを開いて、メールアドレスを認証してください。</string>
+    <string name="email_settings_explanation">メールアドレスはログインと、Snapchatアカウントのセキュリティ保護に使用されます</string>
+    <string name="email_settings_privacy">迷惑メールが送られたり、他のSnapchatterにメールアドレスが開示されたりすることはありません。</string>
+    <string name="email_settings_valid">メールアドレスが認証されました<g id="ok_hand_emoji">%1$s</g></string>
+    <string name="email_settings_verify_explanation">メールアドレスを認証してください。メールアドレスはログインと、Snapchatアカウントのセキュリティ保護に使用されます</string>
+    <string name="exit">終了</string>
+    <string name="failed">失敗しました</string>
+    <string name="failed_profile">プロフィールの読み込みに失敗しました</string>
+    <string name="failed_tap_to_retry">失敗 - タップで再送信</string>
+    <string name="failed_to_block">ブロックに失敗しました</string>
+    <string name="failed_to_send">送信に失敗しました</string>
+    <string name="failed_to_unblock">ブロック解除に失敗しました</string>
+    <string name="feed_footer_failed">読み込み失敗 - タップで再読み込み</string>
+    <string name="feed_footer_loading">読み込み中・・・</string>
+    <string name="feed_loading">読み込み中・・・</string>
+    <string name="feed_secondary_text_format"><g example="3 hours ago" id="relative_time">%1$s</g> - <g example="Swipe right to view chat" id="description">%2$s</g></string>
+    <string name="filters_turn_on_title">フィルターを有効にする</string>
+    <string name="filters_yes">フィルターを使いたい</string>
+    <string name="find_friends">友だち検索</string>
+    <string name="find_friends_cover_description">アドレス帳で友だちを検索します。</string>
+    <string name="find_friends_title">友だち検索</string>
+    <string name="first_auto_add_message">タップして詳細を見る</string>
+    <string name="first_auto_add_title">写真からSnapcodeを追加しますか？</string>
+    <string name="first_auto_yes_button_title">はい！</string>
+    <string name="flashlight_header">ライトのコントロール</string>
+    <string name="flashlight_text">暗いところでも鮮明な写真を撮るにはフラッシュを使用します。</string>
+    <string name="forgot_password"><a href="https://accounts.snapchat.com/accounts/password_reset_request">パスワードを忘れた場合はこちら</a>" "</string>
+    <string name="friend_suggest_hide">非表示</string>
+    <string name="friend_suggest_new_contact"><g id="username">%1$s</g> - 新しい連絡先</string>
+    <string name="friend_suggest_recently_joined"><g id="username">%1$s</g> - 最近追加された連絡先</string>
+    <string name="friends">友だち</string>
+    <string name="friends_context_block">ブロック</string>
+    <string name="friends_context_edit_name">名前の編集</string>
+    <string name="friends_context_unblock">ブロック解除</string>
+    <string name="friends_search_section_my_address_book">アドレス帳から追加</string>
+    <string name="friends_search_section_my_friends">友だち</string>
+    <string name="friends_search_section_username">ユーザー名で追加</string>
+    <string name="friends_stories_title">最近のアップデート</string>
+    <string name="full_network_header">ネットワークへのフルアクセス</string>
+    <string name="full_network_text">Snap、チャット、その他のデータを送受信します。</string>
+    <string name="generic_unknown_error_message">エラーが発生しました。 再度試してください。</string>
+    <string name="grant_contact_book_permissions_alert_message">Snapchatはあなたの連絡先へのアクセスを求めています。連絡先はサーバーに送信され、友だちの検索に使用されます。</string>
+    <string name="here_tooltip">長押しするとライブ動画を共有できるよ！</string>
+    <string name="hide_friend_button">非表示</string>
+    <string name="hide_story">ストーリーを非表示にする</string>
+    <string name="ignore_friend_button">無視</string>
+    <string name="in_my_address_book">端末にも登録あり</string>
+    <string name="incorrect_password">パスワードが違います。残念！</string>
+    <string name="invalid_card_number">無効なカード番号です。</string>
+    <string name="invalid_cvv">CVVが正しくありません。</string>
+    <string name="invalid_expiry_cvv">期限切れまたはCVVが無効です。</string>
+    <string name="invalid_zip">郵便番号が正しくありません。</string>
+    <string name="invite_friend_message_body">Snapchatで追加してね！ユーザー名：%1$s https://www.snapchat.com/download?ref=a</string>
+    <string name="just_now">たった今</string>
+    <string name="landing_page_login">ログイン</string>
+    <string name="landing_page_signup">登録</string>
+    <string name="learn_more">詳細を見る</string>
+    <string name="live">ライブ</string>
+    <string name="loading">読み込み中・・・</string>
+    <string name="location_header">正確な位置情報（GPSとネットワーク基地局）</string>
+    <string name="location_permissions_dialog_message">Snapchatは、スマートフィルターや、みんなのストーリーが利用可能か判断するために一時的に位置情報を使用します。位置情報が記録されることはありません。</string>
+    <string name="location_permissions_dialog_message_nearby_friends">"近くにいる検索中の友達を検索するために
+一時的に位置情報を使用します。位置情報が記録されることはありません。"</string>
+    <string name="location_permissions_dialog_title">"Snapchatが
+位置情報の利用を求めています"</string>
+    <string name="location_problem_searching_nearby">Unable to retrieve your location</string>
+    <string name="location_req_search_nearby">Snapchatの位置情報サービス設定はオフになっています。「近くにいる友達を追加」するには、Androidの設定から位置情報サービスをオンにしてください。</string>
+    <string name="location_text">Snapchatは、ジオフィルターやライブストーリーや「近くにいる人を追加」などのロケーションベースの機能を利用可能にするために、デバイスの位置情報を使用します。</string>
+    <string name="locked_help_unlock"><a href="https://www.snapchat.com/unlock">アカウントのロック解除に関するヘルプ</a></string>
+    <string name="locked_later">後で</string>
+    <string name="locked_title">残念！何か問題が起きたようです。</string>
+    <string name="locked_verify">認証</string>
+    <string name="login_new_username_hint"><i>Eメールアドレス</i></string>
+    <string name="login_password_hint"><i>パスワード</i></string>
+    <string name="login_snapkidz_taken_username">%1$sは既に使用されているよ！メールアドレスでログインするか、別のユーザー名で試してください。</string>
+    <string name="login_title">ログイン</string>
+    <string name="login_try_again">やり直す</string>
+    <string name="login_username_hint"><i>ユーザー名またはEメール</i></string>
+    <string name="me">自分</string>
+    <string name="me_group_title">自分</string>
+    <string name="me_hint"><i>（自分）</i></string>
+    <string name="mobile_password_validation_button">確認</string>
+    <string name="mobile_password_validation_explanation">セキュリティ保護のため、パスワードを入力してください。</string>
+    <string name="modify_storage_header">USBストレージのコンテンツの変更または削除</string>
+    <string name="modify_storage_text">Snapやストーリーをデバイスのフォトギャラリーに保存します。また、Snapchatはデバイスのストレージに設定および送受信したコンテンツを保存します。</string>
+    <string name="my_friends_title">友だち</string>
+    <string name="my_story">マイ ストーリー</string>
+    <string name="my_story_empty_add_friends_button">友だちの追加</string>
+    <string name="my_story_more_viewers">+%1$d人</string>
+    <string name="my_story_no_stories_add_friends">ストーリーが空ですね。友だちを作ろう！</string>
+    <string name="needs_love_group_title">久しぶりにSnapする相手</string>
+    <string name="never_show_again">今後は表示しない</string>
+    <string name="new_friend_request_onboarding_message">友だちから追加されたよ！</string>
+    <string name="new_password_field_hint"><i>新しいパスワード</i></string>
+    <string name="no">いいえ</string>
+    <string name="no_blocked_snapchatters">ブロックされたSnapchatterはいません</string>
+    <string name="no_connection">接続がありません。</string>
+    <string name="no_internet_connection">インターネットに接続されていません。</string>
+    <string name="no_one_searching">近くに検索中のSnapchatterはいません。</string>
+    <string name="no_results">検索結果なし</string>
+    <string name="no_sms_application">SMSアプリケーションがインストールされていません</string>
+    <string name="no_thanks">やめておく</string>
+    <string name="no_video_support_them">友だちのデバイスがライブ動画に対応されてないよ (ﾉ_・｡)</string>
+    <string name="no_video_support_us">"このデバイスはライブ動画に対応されてないよ (ﾉ_・｡) "</string>
+    <string name="not_now">また今度</string>
+    <string name="notification_failed_chat">チャットの送信に失敗しました</string>
+    <string name="notification_failed_chat_unfriended">%1$sはあなたのチャットを受信できません</string>
+    <string name="notification_failed_snap">Snapの送信に失敗しました</string>
+    <string name="notification_failed_snap_and_chat">Snapとチャットの送信に失敗しました</string>
+    <string name="notification_settings_title">通知設定</string>
+    <string name="notification_settings_wake_screen">起動画面</string>
+    <string name="notification_ticker_text">%1$sから</string>
+    <string name="notification_title_snapchat">Snapchat</string>
+    <string name="okay">確認</string>
+    <string name="okay_caps">OK</string>
+    <string name="opened">開封済み</string>
+    <string name="our_campus_description">"「みんなのストーリー」はこの場所にいる
+（または24時間以内にこの場所にいた）他のSnapchatterにも表示されます。"</string>
+    <string name="our_campus_title">みんなのストーリー</string>
+    <string name="our_story_message">"あなたが投稿したSnapが
+ %1$sにあります。"</string>
+    <string name="password_change_validation_explanation">新しいパスワードを設定するには、まず現在のパスワードを入力してください。</string>
+    <string name="password_does_not_match">パスワードが一致しません。</string>
+    <string name="password_field_hint"><i>パスワード</i></string>
+    <string name="password_okay_text">まあまあ<g id="emoji">%1$s</g></string>
+    <string name="password_strong_text">強い<g id="emoji">%1$s</g></string>
+    <string name="password_weak_text">弱い<g id="emoji">%1$s</g></string>
+    <string name="payment_bank_statement">SNAP %1$s</string>
+    <string name="payment_cannot_create">支払いを作成できませんでした</string>
+    <string name="payment_cannot_receive">%1$sはあなたのキャッシュを受け取れません。</string>
+    <string name="payment_card_declined">カードが拒否されました。銀行にご連絡ください。</string>
+    <string name="payment_card_expired">カードの期限がきれています。新しいカードをリンクしてください。</string>
+    <string name="payment_error_sending">キャッシュ送金中のエラーです。再度試してください。</string>
+    <string name="payment_exceeds_weekly_limit">この支払いにより 1週間の送金限度額を超過します。</string>
+    <string name="payment_invalid_amount">支払いがトランザクションの制限を超過します。</string>
+    <string name="payment_issues_please_resolve">キャッシュ送金中の問題です。解決してください。</string>
+    <string name="payment_square_canceled">異常なアクティビティにより、支払いが失敗しました。</string>
+    <string name="pending">保留中</string>
+    <string name="pending_group_title">保留中</string>
+    <string name="pending_snaps_count"><g id="pending_snaps_count">%1$d</g>保留中のSnap</string>
+    <string name="pending_snaps_count_with_username"><g id="pending_snaps_count">%1$d</g>保留中のSnap - <g id="username">%2$s</g></string>
+    <string name="permissions_battery_group">バッテリー</string>
+    <string name="permissions_info">Snapchatは アプリが利用されている間、以下の権限を使用します。</string>
+    <string name="permissions_network_group">ネットワーク</string>
+    <string name="permissions_storage_group">ストレージ</string>
+    <string name="phone_verification_alert_dialog_verification_body">認証コードを%1$sに送信します。電話番号認証を完了するには、6桁の認証コードを入力してください。</string>
+    <string name="phone_verification_details">"携帯電話番号が他のSnapchatterに表示されることはありません。
+
+詳細は"<a href="http://www.snapchat.com/privacy">プライバシーポリシー</a>をご覧ください。</string>
+    <string name="phone_verification_friend_explanation">あなたの電話番号をアドレス帳に登録している友だちは、Snapchatであなたを検索することができます。</string>
+    <string name="phone_verification_need_phone_number_explanation">"実在する人間であることを確認するために、
+電話番号を認証をしてね！"</string>
+    <string name="phone_verification_skip">スキップ</string>
+    <string name="phone_verification_title">電話番号を認証</string>
+    <string name="phone_verification_verify_code_button_retry">コードを再送信する</string>
+    <string name="pick_username_fragment_description">ユーザー名は、Snapchatで使用するあなただけのIDだよ。</string>
+    <string name="pick_username_fragment_hint"><i>ユーザー名</i></string>
+    <string name="pick_username_fragment_title">ユーザー名を選んでください</string>
+    <string name="picture_and_video_header">写真と動画の撮影</string>
+    <string name="picture_and_video_text">お友だちのSnapcodeにカメラを向けると、Snapの撮影やビデオチャットや友だちの追加ができます。</string>
+    <string name="please_contact_bank">銀行にご連絡ください。</string>
+    <string name="please_try_again">再度試してください。</string>
+    <string name="please_try_again_tomorrow">明日またお試しください。</string>
+    <string name="please_try_different_card">別のカードをご利用ください。</string>
+    <string name="post_to_shared_story_dialog_description">%1$sに滞在中、%2$sにSnapを送信することができます。選ばれたSnapは、公式%3$sに投稿され、%4$sを追加した人なら誰もが閲覧ができるようになります。Snapを%5$sに送信する度に、24時間の間%6$sが友だちに追加されます。この位置情報ベースの機能を使用しない場合は、「設定」で「フィルター」をオフにしてください。</string>
+    <string name="post_to_shared_story_dialog_title">" %1$sにSnapを投稿しますか？"</string>
+    <string name="posting">投稿中・・・</string>
+    <string name="posting_1_snap">1件のSnapをストーリーに追加中 ・・・</string>
+    <string name="posting_n_snaps">%1$d件のSnapをストーリーに追加中・・・</string>
+    <string name="press_to_replay">再生するには長押しします</string>
+    <string name="prevent_sleeping_header">端末のスリープを無効にする</string>
+    <string name="prevent_sleeping_text">Snapchatの使用中は画面が自動的にオフになることはありません。</string>
+    <string name="preview_save_failed">保存に失敗しました (´・ω・`)</string>
+    <string name="preview_saved">ギャラリーに保存したよ！</string>
+    <string name="preview_saving">保存中・・・</string>
+    <string name="problem_connecting">"サーバー接続時にエラーが発生しました。 再度試してください。 "</string>
+    <string name="problem_opening_image_file">選択した画像を開く時にエラーが発生しました。再度試してください。</string>
+    <string name="problem_searching_nearby">おっと！問題が起きたようです。</string>
+    <string name="profile_images_go">ドン！</string>
+    <string name="profile_images_notice">Your selfie will be shown to other Snapchatters.</string>
+    <string name="profile_images_ready">位置について</string>
+    <string name="profile_images_remove">削除</string>
+    <string name="profile_images_remove_message">本当に既存のプロフィール写真を削除しますか？</string>
+    <string name="profile_images_set">よーい</string>
+    <string name="profile_images_share">次の方法で共有する...</string>
+    <string name="profile_page_onboarding_message"><g id="happy_person_raising_one_hand_emoji">%1$s</g>連絡先と設定はここにあります。</string>
+    <string name="profile_page_username_and_score"><g id="username">%1$s</g> | <g id="score">%2$s</g></string>
+    <string name="profile_pictures_tooltip_message"><g id="ghost_emoji">%1$s</g>タップして自分の写真を追加！</string>
+    <string name="provider_not_supported">この機能は、現在のバージョンでは利用できません。アプリをアップデートしてください。</string>
+    <string name="quick_add">おすすめフレンド</string>
+    <string name="read_accounts_header">この端末上のアカウントの検索</string>
+    <string name="read_accounts_text">友だちからSnapchatでの連絡や、他のSnapchatterに追加や、その他の重要な出来事の通知を受信します。</string>
+    <string name="read_phone_header">端末のスタータスとIDの読み取り</string>
+    <string name="read_phone_text">Snapchatに登録するときに、電話番号が自動入力されます。</string>
+    <string name="read_storage_header">USBストレージのコンテンツの読み取り</string>
+    <string name="read_storage_text">以前に保存されたアプリ設定が自動的に読み込まれます。</string>
+    <string name="receive_data_header">インターネットからデータを受信する</string>
+    <string name="receive_data_text">他のSnapchatterからSnap、チャット、その他のコンテンツを受信します。</string>
+    <string name="receive_sms_header">テキストメッセージ（SMS）の受信する</string>
+    <string name="receive_sms_text">電話番号の確認中にSnapchatから送信されるSMSコードが自動入力されます。</string>
+    <string name="received_cash_reversed_message">あなたへの$%1$sの送金が失敗しました</string>
+    <string name="recent_group_title">最近の受信者</string>
+    <string name="registration_continue">続行</string>
+    <string name="registration_on_back_pressed_safe_warning">本当に登録を終了しますか？後でここから続けられます。</string>
+    <string name="registration_on_back_pressed_warning">本当に登録を終了しますか？作成中のアカウントにアクセスできなくなる可能性があります。</string>
+    <string name="registration_retry">再試行</string>
+    <string name="relationship_and_username"><g id="relationship">%1$s</g> - <g id="username">%2$s</g></string>
+    <string name="relink_card">カードを再度リンク</string>
+    <string name="relink_card_description">別のデバイスからも 同じSnapcashアカウントにログインしているようです。セキュリティ保護のため、キャッシュの送金前にデビットカードを再度リンクしてください。</string>
+    <string name="replay">再生</string>
+    <string name="replay_confirm">"%1$sさんから送られたSnapを再生しますか？
+再生できるのは1日1回だけです。"</string>
+    <string name="replay_snap">Snapを再生</string>
+    <string name="replayed">再生する！</string>
+    <string name="replayed_and_screenshot">再生してスクリーンショットを撮影！</string>
+    <string name="save">保存</string>
+    <string name="save_failed_my_story_notification">Snapの保存に失敗しました。</string>
+    <string name="save_my_story_notification">Snapを保存中…</string>
+    <string name="save_story_description">これにより、すべてのストーリーがギャラリーに保存されます。</string>
+    <string name="save_story_failed_snaps_not_all_loaded">保存に失敗しました (´・ω・`) 引き続きSnapを読み込んでいます。再度試してください。</string>
+    <string name="save_story_question">ストーリーを保存しますか？</string>
+    <string name="save_story_text">保存</string>
+    <string name="save_story_to_gallery_failed">ストーリーの保存に失敗しました。</string>
+    <string name="save_success_my_story_notification">保存完了！</string>
+    <string name="save_to_gallery">ギャラリーに保存</string>
+    <string name="saved_secondary_text">%1$s - 保存完了！</string>
+    <string name="saving_secondary_text">%1$s - 保存中・・・</string>
+    <string name="screenshot">スクリーンショット完了！</string>
+    <string name="search_friends_description">連絡先の検索、またはユーザー名による友だちの追加。</string>
+    <string name="search_hint"><i>検索</i></string>
+    <string name="searching">検索中…</string>
+    <string name="sec1">1</string>
+    <string name="sec10">10</string>
+    <string name="sec2">2</string>
+    <string name="sec3">3</string>
+    <string name="sec4">4</string>
+    <string name="sec5">5</string>
+    <string name="sec6">6</string>
+    <string name="sec7">7</string>
+    <string name="sec8">8</string>
+    <string name="sec9">9</string>
+    <string name="security_ghost_change_password_succeed">パスワードが更新されたよ！</string>
+    <string name="security_ghost_phone_password_succeed">パスワードのリセットのために電話番号を確認します</string>
+    <string name="send_cash_confirmation_desc">この操作により、デビットカードに紐づいた銀行口座から%1$sが送金されます。</string>
+    <string name="send_cash_confirmation_title">本当に送金しますか？</string>
+    <string name="send_to_add_friend">友だちを追加</string>
+    <string name="send_to_just_added">最近追加</string>
+    <string name="send_to_new_friend">新しい友だちに送信</string>
+    <string name="send_to_title">送信先 ・・・</string>
+    <string name="sending">送信中・・・</string>
+    <string name="sending_cash">$%1$sを送金中・・・</string>
+    <string name="sending_failed_tap_to_retry">送信失敗 - タップで再送信</string>
+    <string name="sent">送信完了</string>
+    <string name="sent_cash">キャッシュを送りました</string>
+    <string name="sent_cash_expired_message">$%1$sを返金しました</string>
+    <string name="sent_cash_message">$%1$sを送金しました</string>
+    <string name="sent_via_discover">Discoverで送信</string>
+    <string name="settings_account_actions_blocked">ブロックしています</string>
+    <string name="settings_account_actions_clear">クリア</string>
+    <string name="settings_account_actions_clear_all">すべてクリア</string>
+    <string name="settings_account_actions_clear_all_confirm">本当にフィードをクリアしますか？</string>
+    <string name="settings_account_actions_clear_all_confirm_subtext">この操作は、すべての会話をフィードからクリアします。会話内の保存済みまたは送信済みのメッセージは削除されません。</string>
+    <string name="settings_account_actions_clear_confirm">本当にこの会話をクリアしますか？</string>
+    <string name="settings_account_actions_clear_confirm_subtext">この操作は、会話をフィードからクリアします。会話内の保存済みまたは送信済みのメッセージは削除されません。</string>
+    <string name="settings_account_actions_clear_conversations">会話をクリア</string>
+    <string name="settings_account_actions_clear_failed_plural">会話をクリアできませんでした。再度試してください。</string>
+    <string name="settings_account_actions_clear_failed_singular">会話をクリアできませんでした。再度試してください。</string>
+    <string name="settings_account_actions_clearing">クリア中・・・</string>
+    <string name="settings_account_actions_header">アカウント アクション</string>
+    <string name="settings_account_actions_logout">ログアウト</string>
+    <string name="settings_account_actions_logout_confirm">本当にログアウトしますか？</string>
+    <string name="settings_advanced">高度な設定</string>
+    <string name="settings_beta_description">" Snapchatベータ版では、最新機能をお試しいただけます。ベータテストの参加者の方々にはSnapchatの改良にご協力いただくことで、最新のコードアップデートをご提供させていただきます。"</string>
+    <string name="settings_beta_opt_out">オプト アウト</string>
+    <string name="settings_beta_opt_out_description">ベータテストをやめる</string>
+    <string name="settings_boring_header">詳細</string>
+    <string name="settings_cash">Snapcash</string>
+    <string name="settings_cash_add_card">カードを追加</string>
+    <string name="settings_cash_debit_card_header">デビット カード</string>
+    <string name="settings_cash_history_header">履歴</string>
+    <string name="settings_cash_options_header">オプション</string>
+    <string name="settings_cash_security_code">セキュリティ コード</string>
+    <string name="settings_cash_security_code_subtext">送金には、CVVが必要です</string>
+    <string name="settings_cash_support">Snapcashサポート</string>
+    <string name="settings_cash_transactions">トランザクション &amp; レシート</string>
+    <string name="settings_cash_view_transactions">トランザクションとレシート</string>
+    <string name="settings_custom_stories_privacy">ストーリーのプライバシー</string>
+    <string name="settings_custom_stories_privacy_explanation">ストーリーを見せたくない友だちをブロックします。</string>
+    <string name="settings_displayName">名前</string>
+    <string name="settings_email">Eメール</string>
+    <string name="settings_email_change">メールアドレスを入力してください</string>
+    <string name="settings_filters">フィルター</string>
+    <string name="settings_filters_location_off">デバイスの位置情報サービスがオフになっています。すべてのフィルターを使用するには、Androidの「設定」から位置情報サービスをオンにしてください。</string>
+    <string name="settings_filters_location_required">スマートフィルターやみんなのストーリーなどの機能は位置情報を要求します。</string>
+    <string name="settings_front_facing_flash">フロント側フラッシュ</string>
+    <string name="settings_google_plus">Google+ コミュニティ</string>
+    <string name="settings_google_plus_description">Google+ でディスカッションに参加</string>
+    <string name="settings_join_snapchat_beta">Snapchatベータ版に参加</string>
+    <string name="settings_licenses">ライセンス</string>
+    <string name="settings_mobile_number">携帯電話番号</string>
+    <string name="settings_mobile_number_allow_friends">友だちによる検索を許可する</string>
+    <string name="settings_my_account_header">マイ アカウント</string>
+    <string name="settings_notification_led">LEDの点滅</string>
+    <string name="settings_notification_settings">通知設定</string>
+    <string name="settings_notification_sound">音</string>
+    <string name="settings_notification_vibration">バイブ機能</string>
+    <string name="settings_num_best_friends">仲良しの人数</string>
+    <string name="settings_num_best_friends_failed">仲良しの人数の変更に失敗しました</string>
+    <string name="settings_password">パスワード</string>
+    <string name="settings_permissions">許可</string>
+    <string name="settings_privacy_custom">カスタム</string>
+    <string name="settings_privacy_everyone">全員</string>
+    <string name="settings_privacy_header">プライバシー</string>
+    <string name="settings_privacy_my_friends">友だち</string>
+    <string name="settings_privacy_policy">プライバシー ポリシー</string>
+    <string name="settings_rate_snapchat">評価する</string>
+    <string name="settings_rate_snapchat_description">ご満足いただけていますか？Google PlayでSnapchatを評価してください！</string>
+    <string name="settings_receive_notifications">受信通知</string>
+    <string name="settings_replay">再生</string>
+    <string name="settings_save">保存</string>
+    <string name="settings_send_snaps">Snapを受信する相手・・・</string>
+    <string name="settings_services_header">追加サービス</string>
+    <string name="settings_services_manage">管理</string>
+    <string name="settings_services_title">追加サービス</string>
+    <string name="settings_share_stories">ストーリーの共有相手・・・</string>
+    <string name="settings_snapchat_beta">Snapchatベータ版</string>
+    <string name="settings_support">サポート</string>
+    <string name="settings_support_header">サポート</string>
+    <string name="settings_terms">利用規約</string>
+    <string name="settings_title">設定</string>
+    <string name="settings_username">ユーザー名</string>
+    <string name="settings_weather_channel_attribution">お天気チャンネル%1$s</string>
+    <string name="signup_birthday_hint"><i>誕生日</i></string>
+    <string name="signup_page_email_hint">メール アドレス</string>
+    <string name="signup_page_password_hint">新しいパスワード</string>
+    <string name="signup_page_title">登録</string>
+    <string name="skip_add_friends">友だちと一緒なら、Snapchatがもっと楽しくなるよ！本当にこのステップをスキップしますか？</string>
+    <string name="snap_already_viewed">残念！このSnapは視聴済みです。</string>
+    <string name="snap_delete_failure">Snapの削除に失敗しました。</string>
+    <string name="snap_failed_to_post">1件のSnapの投稿に失敗しました。</string>
+    <string name="snap_list_empty_list_msg">まだSnapがないよ (´･ω･`)</string>
+    <string name="snap_tag_help_description">Snapchatterは、あなたのゴーストにカメラを向けて画面をタップすればあなたを追加できるよ！</string>
+    <string name="snap_tag_no_connection">接続がないよ！</string>
+    <string name="snap_to_add">追加するSnapまたはスクリーンショット</string>
+    <string name="snapkidz_welcome">Snapkidzへようこそ！</string>
+    <string name="snaps_failed_to_post">%1$d件のSnapの投稿に失敗しました。</string>
+    <string name="sorry">残念！</string>
+    <string name="special_thanks_to_rich">"リチャード・パッティスさん
+カレル・ザ・ロボットをありがとうございました。 ( ´∀｀)"</string>
+    <string name="sponsored">スポンサー提供</string>
+    <string name="still_searching">引き続き検索中...</string>
+    <string name="stories_all_stories_header_text">すべてのストーリー</string>
+    <string name="stories_recent_updates">最近のアップデート</string>
+    <string name="stories_title">ストーリー</string>
+    <string name="story_group_title">ストーリー</string>
+    <string name="story_nonsnapchatter_secondary_text">Snapchatに招待！ - <g example="412-412-4124" id="phone_number">%1$s</g></string>
+    <string name="story_snap_failed_tap_to_retry">%1$s - タップで再試行</string>
+    <string name="story_unable_to_post">残念！そのSnapはもう投稿できません。</string>
+    <string name="swipe_cash_bar_dollar_text">$%1$s</string>
+    <string name="swipe_cash_bar_swipe_down">下にスワイプして閉じる。</string>
+    <string name="swipe_cash_bar_swipe_up">上にスワイプして送金！</string>
+    <string name="swipe_cash_on_hidden_while_swiping">"%1$sにキャッシュをスワイプしている途中で中断されたようです。
+再度試してください。"</string>
+    <string name="swipe_cash_on_hidden_while_swiping_alert_title">おっと！</string>
+    <string name="swipe_filters_onboarding_message">スワイプしてフィルタリング！</string>
+    <string name="swipe_for_chat">右にスワイプしてチャットを開始</string>
+    <string name="swipe_right_to_view">右にスワイプして表示</string>
+    <string name="swipe_to_exit_tutorial_text">下にスワイプすると終了します。</string>
+    <string name="tap_to_add_more">タップして友だちを追加しよう!</string>
+    <string name="tap_to_capture">タップして撮影</string>
+    <string name="tap_to_load">タップで読み込み</string>
+    <string name="tap_to_replay">タップで再生</string>
+    <string name="tap_to_retry">タップで再試行</string>
+    <string name="tap_to_skip_tutorial_text">タップしてスキップ</string>
+    <string name="tap_to_view">タップして表示</string>
+    <string name="tap_to_view_channel">タップして今日の%1$sエディションを表示</string>
+    <string name="tap_to_view_edition">タップしてDiscoverで表示</string>
+    <string name="tap_to_view_full_story">タップしてストーリー全体を見る</string>
+    <string name="tap_to_view_more">タップして他のチャンネルを見る</string>
+    <string name="tap_to_view_snaps">タップでSnapsを表示！</string>
+    <string name="tap_to_view_stories">タップでストーリーを表示！</string>
+    <string name="tap_to_view_video_in_discover">タップしてこのビデオをDiscoverで視聴</string>
+    <string name="too_many_attempts">試行回数が多過ぎます。</string>
+    <string name="tos_accept">同意する</string>
+    <string name="tos_logout">ログアウト</string>
+    <string name="tos_privacy_policy">プライバシー ポリシー</string>
+    <string name="tos_terms">当社の%1$sおよび%2$sが変更されました。「同意する」をタップすることにより、改訂版のSnapchat%3$sおよび%4$sに同意することになります。</string>
+    <string name="tos_terms_of_use">利用規約</string>
+    <string name="turn_on_high_accuracy">デバイスの位置情報サービスで高精度モード（GPS）を有効にしてください。</string>
+    <string name="two_fa_disabled_phone_verification_info">ログイン認証を利用するには、電話番号の認証が必要です。</string>
+    <string name="two_fa_disabled_settings_help_verified">この番号が正しくない場合は、<a href="">変更可能です</a></string>
+    <string name="two_fa_password_validation_explanation">セキュリティ保護のため、パスワードを入力してください。</string>
+    <string name="two_fa_phone_verification_desc">二段階認証を利用するには、電話番号の認証が必要です。</string>
+    <string name="two_fa_settings_conformation_explanation">%1$sにコードを送信しました。ログイン認証を有効にするには、以下にコードを入力してください。</string>
+    <string name="two_fa_settings_explanation">ログイン認証では、新しいデバイスからログインするたびに、コードが記載されたテキストメッセージが%1$sに送信されます。</string>
+    <string name="two_fa_settings_forget_all_devices">すべてのデバイスを消去</string>
+    <string name="two_fa_settings_forget_device">デバイスを消去</string>
+    <string name="two_fa_settings_forget_device_explanation">あなたのSnapchatアカウントで以下のデバイスが認証されています。このデバイスにはパスワードのみでログインできます。</string>
+    <string name="two_fa_settings_forget_device_info">認証したデバイスのいずれかが使用できない？だったら消去しちゃおう！</string>
+    <string name="two_fa_settings_forget_device_last_login">最終ログイン - %1$s</string>
+    <string name="two_fa_settings_forget_devices">デバイスを消去</string>
+    <string name="two_fa_settings_forget_devices_explanation">あなたのSnapchatアカウントで以下のデバイスが認証されています。このデバイスにはパスワードのみでログインできます。</string>
+    <string name="two_fa_settings_forget_devices_no_device">まだ登録されているデバイスがありません。</string>
+    <string name="two_fa_settings_forget_devices_succeed">すべてのデバイスを消去したよ！</string>
+    <string name="two_fa_settings_forget_one_device_confirm_msg">このデバイスでログインするには、再認証が必要です。</string>
+    <string name="two_fa_settings_forget_one_device_confirm_title">本当にこのデバイスを消去しますか？</string>
+    <string name="two_fa_settings_phone_changed_msg">電話番号が変更されています。ログイン認証を無効化しました —「設定」から再有効化できます。</string>
+    <string name="two_fa_settings_phone_changed_title">ログイン認証が無効になりました</string>
+    <string name="two_fa_settings_recovery_code">リカバリーコード</string>
+    <string name="two_fa_settings_recovery_code_confirm">どこか安全な場所に書き留めてください。このコードは、テキストメッセージで送信されるコードの代わりに1度だけ再ログインに使用できます。</string>
+    <string name="two_fa_settings_recovery_code_confirm_title">リカバリーコードは%1$sです。</string>
+    <string name="two_fa_settings_recovery_code_explanation">電話を紛失した場合、または電話番号を変更した場合、ログインできない可能性があります。リカバリーコードがあれば、アカウントに再アクセス可能です。</string>
+    <string name="two_fa_settings_recovery_code_generate">コードを生成</string>
+    <string name="two_fa_settings_recovery_code_used">リカバリーコードを利用してログインしました。ログイン認証を無効にしました — 「設定」から有効にできます。</string>
+    <string name="two_fa_settings_recovery_code_used_title">ログイン認証が無効になりました</string>
+    <string name="two_fa_settings_recovery_code_write_down">書き留めました</string>
+    <string name="two_fa_settings_title">ログイン認証</string>
+    <string name="two_fa_settings_verify_new_devices">ログイン認証</string>
+    <string name="two_fa_settings_verify_new_devices_confirm">ログイン認証が無効になっていると、新しいデバイスからログインがあっても、パスワードしか確認されません。</string>
+    <string name="two_fa_settings_verify_new_devices_explanation">ログイン認証を利用するとアカウントのセキュリティがより強化されます。新しいデバイスからログインするには、パスワードに加えてモバイル端末に送信されるコードの入力が必要になります。</string>
+    <string name="two_fa_your_phone_number">電話番号</string>
+    <string name="twofa_new_device_verification_explanation">新しいデバイスからのログインを検知しました。電話番号%1$sにコードを記載したテキストメッセージを送信しました。IDを認証するには、以下にそのコードを入力してください。</string>
+    <string name="twofa_new_device_verification_title">デバイスを認証</string>
+    <string name="unhide_story">ストーリーを再表示する</string>
+    <string name="unknown_chat_message">%1$sからメッセージを受信しました。表示するにはSnapchatのアップグレードが必要です。&lt;a href=\"market://details?id=com.snapchat.android\">今すぐアップグレードしよう！&lt;/a></string>
+    <string name="unlink_card_dialog_message">本当にデビット カードのリンクを解除しますか？</string>
+    <string name="unlink_card_dialog_title">カードのリンクを解除しますか？</string>
+    <string name="unlocked_msg">アカウントの認証ができたよ！ ご利用ありがとうございます。</string>
+    <string name="unsupported_phone_message">現時点では、米国の電話番号のみがサポートされています。</string>
+    <string name="unsupported_phone_title">サポートされていない電話番号です</string>
+    <string name="user_agreement">アカウントを作成することにより<a href="http://www.snapchat.com/terms">利用規約</a>と<a href="http://www.snapchat.com/privacy">プライバシーポリシー</a>"を読んだ上で同意したことになります。 "</string>
+    <string name="username_and_score"><g id="username">%1$s</g> | <g id="score">%2$s</g></string>
+    <string name="verify_account">アカウントを認証</string>
+    <string name="verify_email">メールを認証</string>
+    <string name="version_in_settings">Snapchat v<g example="9.2.0.3" id="version">%1$s</g>"
+LA発信"</string>
+    <string name="vibration_header">バイブレーションのコントロール</string>
+    <string name="vibration_text">Snapchatの通知についてバイブレーション機能をオンにします。</string>
+    <string name="video_quality_automatic">自動</string>
+    <string name="video_quality_low">低</string>
+    <string name="video_quality_standard">標準</string>
+    <string name="video_recording_failed">動画の撮影に失敗しました。</string>
+    <string name="view_more_recents_cell_text">最近の受信者をもっと表示する・・・</string>
+    <string name="view_network_header">ネットワーク接続の表示</string>
+    <string name="view_network_text">Snapchatは、インターネット接続の強度に基づいてSnapの配信を最適化します。</string>
+    <string name="view_wifi_header">Wi-Fi接続の表示</string>
+    <string name="view_wifi_text">Snapchatは、Wi-Fi接続の強度に基づいてSnapの配信を最適化します。</string>
+    <string name="what_is_snapkidz">Snapkidzとは？</string>
+    <string name="yes">はい</string>
+    <string name="yes_dont_ask_again">今後この質問を表示しない</string>
+    <string name="yes_exclamation_mark">はい！</string>
+    <string name="you_have_been_logged_out">ログアウトしました</string>
+</resources>

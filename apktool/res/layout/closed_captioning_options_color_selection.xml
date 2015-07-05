@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RadioGroup android:orientation="vertical" android:id="@id/closed_captioning_options_color_selector" android:padding="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:divider="@drawable/spacer" android:showDividers="middle">
+            <RadioButton android:tag="closed_captioning_options_color_red" android:background="@drawable/closed_captioning_options_color_selection_red" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@null" android:minWidth="45.0dip" android:minHeight="45.0dip" />
+            <RadioButton android:tag="closed_captioning_options_color_yellow" android:background="@drawable/closed_captioning_options_color_selection_yellow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@null" android:minWidth="45.0dip" android:minHeight="45.0dip" />
+            <RadioButton android:tag="closed_captioning_options_color_green" android:background="@drawable/closed_captioning_options_color_selection_green" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@null" android:minWidth="45.0dip" android:minHeight="45.0dip" />
+            <RadioButton android:tag="closed_captioning_options_color_cyan" android:background="@drawable/closed_captioning_options_color_selection_cyan" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@null" android:minWidth="45.0dip" android:minHeight="45.0dip" />
+        </LinearLayout>
+        <View android:background="@drawable/spacer" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:divider="@drawable/spacer" android:showDividers="middle">
+            <RadioButton android:tag="closed_captioning_options_color_blue" android:background="@drawable/closed_captioning_options_color_selection_blue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@null" android:minWidth="45.0dip" android:minHeight="45.0dip" />
+            <RadioButton android:tag="closed_captioning_options_color_magenta" android:background="@drawable/closed_captioning_options_color_selection_magenta" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@null" android:minWidth="45.0dip" android:minHeight="45.0dip" />
+            <RadioButton android:tag="closed_captioning_options_color_white" android:background="@drawable/closed_captioning_options_color_selection_white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@null" android:minWidth="45.0dip" android:minHeight="45.0dip" />
+            <RadioButton android:tag="closed_captioning_options_color_black" android:background="@drawable/closed_captioning_options_color_selection_black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@null" android:minWidth="45.0dip" android:minHeight="45.0dip" />
+        </LinearLayout>
+    </RadioGroup>
+    <RadioGroup android:orientation="vertical" android:id="@id/closed_captioning_options_opacity_selector" android:padding="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <RadioButton android:id="@id/closed_captioning_options_opacity_none" android:padding="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@drawable/closed_captioning_options_radiobutton" android:text="Transparent" />
+        <RadioButton android:id="@id/closed_captioning_options_opacity_semi_transparent_light" android:padding="8.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@drawable/closed_captioning_options_radiobutton" android:text="Semi-Transparent Light" />
+        <RadioButton android:id="@id/closed_captioning_options_opacity_semi_transparent" android:padding="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@drawable/closed_captioning_options_radiobutton" android:text="Semi-Transparent" />
+        <RadioButton android:id="@id/closed_captioning_options_opacity_opaque" android:padding="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@drawable/closed_captioning_options_radiobutton" android:text="Opaque" />
+    </RadioGroup>
+</LinearLayout>

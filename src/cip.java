@@ -1,0 +1,9 @@
+public abstract interface cip
+  extends cij
+{}
+
+/* Location:
+ * Qualified Name:     cip
+ * Java Class Version: 6 (50.0)
+ * JD-Core Version:    0.7.1
+ */

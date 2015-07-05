@@ -1,0 +1,12 @@
+import com.snapchat.android.util.chat.SecureChatSession.ConnectionState;
+
+public abstract interface axe
+{
+  public abstract void a(SecureChatSession.ConnectionState paramConnectionState);
+}
+
+/* Location:
+ * Qualified Name:     axe
+ * Java Class Version: 6 (50.0)
+ * JD-Core Version:    0.7.1
+ */

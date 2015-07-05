@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/drawing_tools" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:id="@id/drawing_button_color_background" android:background="#ffff0000" android:layout_width="35.0dip" android:layout_height="36.0dip" android:layout_marginLeft="7.0dip" android:layout_marginBottom="15.0dip" android:layout_alignLeft="@id/drawing_btn_selected" android:layout_alignBottom="@id/drawing_btn_selected" />
+    <ImageButton android:id="@id/drawing_btn_selected" android:background="@drawable/aa_snap_preview_color_picker_button_pressed" android:layout_width="48.659973dip" android:layout_height="66.66dip" android:layout_marginTop="6.659973dip" android:layout_marginRight="11.329987dip" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+    <View android:id="@id/undo_button_color_background" android:background="#ffff0000" android:visibility="invisible" android:layout_width="26.0dip" android:layout_height="26.0dip" android:layout_marginLeft="11.0dip" android:layout_marginBottom="24.0dip" android:layout_alignLeft="@id/undo_btn" android:layout_alignBottom="@id/undo_btn" />
+    <ImageButton android:id="@id/undo_btn" android:background="@drawable/aa_snap_preview_undo" android:visibility="invisible" android:layout_width="48.659973dip" android:layout_height="66.66dip" android:layout_toLeftOf="@id/drawing_btn_selected" android:layout_alignTop="@id/drawing_btn_selected" />
+    <com.snapchat.android.ui.ColorPickerView android:id="@id/color_picker_view" android:layout_width="wrap_content" android:layout_height="147.0dip" android:layout_marginRight="11.329987dip" android:layout_below="@id/drawing_btn_selected" android:layout_alignParentRight="true" />
+</RelativeLayout>

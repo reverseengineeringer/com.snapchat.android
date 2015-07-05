@@ -1,0 +1,105 @@
+package com.snapchat.android.fragments.chat;
+
+import akb;
+import akg;
+import akh;
+import ako;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import com.snapchat.android.analytics.AnalyticsEvents;
+import com.snapchat.android.model.CashTransaction;
+import com.snapchat.android.model.Snap;
+import com.snapchat.android.model.chat.CashFeedItem;
+import com.snapchat.android.model.chat.ChatFeedItem;
+import com.snapchat.android.model.chat.ChatMedia;
+import com.snapchat.android.ui.ImageResourceView;
+import com.snapchat.android.ui.LockingAboveTheFoldListView;
+import java.util.List;
+import ya;
+import ya.b;
+import yl;
+import yq;
+import ys;
+
+final class ChatFragment$6
+  implements AdapterView.OnItemClickListener
+{
+  ChatFragment$6(ChatFragment paramChatFragment) {}
+  
+  public final void onItemClick(AdapterView<?> paramAdapterView, View paramView, int paramInt, long paramLong)
+  {
+    if (ChatFragment.f(a) == null) {}
+    ChatFeedItem localChatFeedItem;
+    do
+    {
+      do
+      {
+        do
+        {
+          do
+          {
+            return;
+            paramInt -= ChatFragment.e(a).getHeaderViewsCount();
+          } while (paramInt >= ChatFragment.u(a).size());
+          localChatFeedItem = (ChatFeedItem)ChatFragment.u(a).get(paramInt);
+        } while ((localChatFeedItem.d() == null) || ((localChatFeedItem instanceof Snap)) || ((localChatFeedItem instanceof akg)));
+        if ((!localChatFeedItem.O()) || (!localChatFeedItem.Q())) {
+          break;
+        }
+        if ((localChatFeedItem instanceof akh))
+        {
+          new ys().a((akh)localChatFeedItem);
+          return;
+        }
+        if ((localChatFeedItem instanceof akb))
+        {
+          ChatFragment.w(a).a(ChatFragment.f(a), (akb)localChatFeedItem, true, true);
+          return;
+        }
+      } while (!(localChatFeedItem instanceof CashFeedItem));
+      paramAdapterView = (CashFeedItem)localChatFeedItem;
+      AnalyticsEvents.o(mCashTransaction.a());
+      ChatFragment.o(a);
+      a.i.a(ChatFragment.f(a), paramAdapterView, new ya.b()
+      {
+        public final void a()
+        {
+          ChatFragment.q(a);
+        }
+        
+        public final void b()
+        {
+          ChatFragment.q(a);
+        }
+      });
+      return;
+      if (((localChatFeedItem instanceof ChatMedia)) && (paramView != null))
+      {
+        paramAdapterView = paramView.findViewById(2131362105);
+        if ((paramAdapterView instanceof ImageResourceView))
+        {
+          paramAdapterView = (ImageResourceView)paramAdapterView;
+          if (paramAdapterView.b())
+          {
+            paramAdapterView.a();
+            return;
+          }
+        }
+      }
+    } while ((!(localChatFeedItem instanceof ako)) || (!((ako)localChatFeedItem).e()));
+    if ((localChatFeedItem instanceof ChatMedia)) {}
+    for (paramAdapterView = ChatFragment.x();; paramAdapterView = null)
+    {
+      ChatFragment.x(a).a(ChatFragment.f(a), (ako)localChatFeedItem, paramAdapterView);
+      ChatFragment.a(a, localChatFeedItem.d());
+      return;
+    }
+  }
+}
+
+/* Location:
+ * Qualified Name:     com.snapchat.android.fragments.chat.ChatFragment.6
+ * Java Class Version: 6 (50.0)
+ * JD-Core Version:    0.7.1
+ */

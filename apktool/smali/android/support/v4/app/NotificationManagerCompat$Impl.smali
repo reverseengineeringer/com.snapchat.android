@@ -1,0 +1,25 @@
+.class public interface abstract Landroid/support/v4/app/NotificationManagerCompat$Impl;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroid/support/v4/app/NotificationManagerCompat;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x609
+    name = "Impl"
+.end annotation
+
+
+# virtual methods
+.method public abstract cancelNotification$21184a1(Landroid/app/NotificationManager;I)V
+.end method
+
+.method public abstract getSideChannelBindFlags()I
+.end method
+
+.method public abstract postNotification$62d42cd7(Landroid/app/NotificationManager;ILandroid/app/Notification;)V
+.end method

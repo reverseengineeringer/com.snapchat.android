@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:id="@id/card_link_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:orientation="vertical" android:id="@id/card_error_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="@dimen/card_frame_top_margin"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <ImageButton android:id="@id/card_link_x" android:background="@drawable/aa_snap_preview_x" android:layout_width="52.0dip" android:layout_height="58.0dip" />
+            <TextView android:textSize="@dimen/card_link_instructions_text_size" android:textColor="@android:color/white" android:gravity="center" android:id="@id/card_link_instructions" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/card_front_instructions" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+        </RelativeLayout>
+        <RelativeLayout android:layout_gravity="center" android:orientation="vertical" android:id="@id/card_placeholder" android:background="@drawable/card_placeholder_transition" android:layout_width="fill_parent" android:layout_height="@dimen/card_frame_height" android:layout_marginLeft="@dimen/card_frame_side_margin" android:layout_marginTop="@dimen/card_frame_top_margin" android:layout_marginRight="@dimen/card_frame_side_margin" android:layout_centerHorizontal="true">
+            <com.snapchat.android.ui.cash.CardNumberEditText android:id="@id/card_number_input" android:background="@drawable/edit_fields_background" android:padding="7.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="23.0dip" android:layout_marginTop="87.0dip" android:layout_marginRight="28.0dip" android:hint="@string/card_number" android:maxLength="20" android:layout_centerHorizontal="true" android:textIsSelectable="false" />
+            <com.snapchat.android.ui.cash.CardExpiryEditText android:id="@id/card_expiration_input" android:background="@drawable/edit_fields_background" android:padding="5.0dip" android:layout_width="@dimen/card_expiry_input_width" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginBottom="24.0dip" android:hint="@string/card_expiration" android:maxLength="6" android:layout_below="@id/card_number_input" android:layout_alignLeft="@id/card_number_input" android:textIsSelectable="false" />
+            <include android:id="@id/card_back_view" android:visibility="gone" layout="@layout/card_cvv_layout" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <Button android:id="@id/card_continue_button" android:text="@string/registration_continue" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" style="@style/CashContinueButton" />
+    <ProgressBar android:id="@id/card_continue_progress_bar" android:visibility="invisible" android:layout_width="@dimen/ui_element_unit" android:layout_height="@dimen/ui_element_unit" android:layout_marginBottom="@dimen/default_gap" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" />
+</RelativeLayout>

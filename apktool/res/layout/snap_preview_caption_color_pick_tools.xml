@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/caption_color_pick_tools" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageButton android:id="@id/caption_color_pick_btn" android:background="@drawable/aa_snap_preview_color_picker_button" android:layout_width="48.659973dip" android:layout_height="66.66dip" android:layout_marginTop="6.659973dip" android:layout_marginRight="11.329987dip" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+    <com.snapchat.android.ui.caption.CaptionColorPickerView android:id="@id/caption_color_picker_view" android:layout_width="wrap_content" android:layout_height="147.0dip" android:layout_marginRight="11.329987dip" android:layout_below="@id/caption_color_pick_btn" android:layout_alignParentRight="true" />
+</RelativeLayout>

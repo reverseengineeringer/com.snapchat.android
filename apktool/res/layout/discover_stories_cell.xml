@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.lucasr.twowayview.TwoWayView android:orientation="horizontal" android:id="@id/discover_list" android:layout_width="fill_parent" android:layout_height="@dimen/horizontal_section_cell_size"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

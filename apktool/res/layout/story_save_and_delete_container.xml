@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:id="@id/save_and_delete_container" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/story_save_snap_button_container" android:padding="@dimen/touch_delegate_parent_padding" android:visibility="gone" android:layout_width="@dimen/touch_delegate_parent_size" android:layout_height="@dimen/touch_delegate_parent_size">
+        <Button android:id="@id/story_save_snap_button" android:background="@drawable/stories_page_save_snap_selector" android:padding="@dimen/default_gap" android:visibility="visible" android:layout_width="@dimen/icon_size_smaller" android:layout_height="@dimen/icon_size_smaller" />
+    </LinearLayout>
+    <Space android:id="@id/story_save_delete_snap_spacer" android:visibility="gone" android:layout_width="@dimen/default_gap" android:layout_height="@dimen/default_gap" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/story_delete_snap_button_container" android:padding="@dimen/touch_delegate_parent_padding" android:visibility="gone" android:layout_width="@dimen/touch_delegate_parent_size" android:layout_height="@dimen/touch_delegate_parent_size">
+        <Button android:id="@id/story_delete_snap_button" android:background="@drawable/stories_page_delete_snap_selector" android:padding="@dimen/default_gap" android:visibility="visible" android:layout_width="@dimen/icon_size_smaller" android:layout_height="@dimen/icon_size_smaller" />
+    </LinearLayout>
+</LinearLayout>
